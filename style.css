@@ -26,7 +26,7 @@ select {
     border-radius: 4px;
 }
 
-button[type="submit"] {
+button[type="submit"],button[type="update"],button[type="delete"] {
     padding: 0.5rem 1rem;
     background-color: #4CAF50;
     color: white;
