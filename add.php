@@ -1,13 +1,21 @@
 <?php
 
-include "connect.php"
+include "connect.php";
 if (isset($_POST['submit'])) {
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
     $lang = $_POST['language'];
     $available =$_POST['availability'];
+    // var_dump($_POST);
 
-    $sql = "insert into book ('','BookName','Description','')"
+    $sql = "insert into `books` (ID,Bookname,Description,Language,Available) values('','$bookName','$des','$lang','$available')";
+    $result = mysqli_query($conn,$sql);
+    if ($result) {
+        // echo "Data Insert Successfully";
+        header ('location:display.php');
+    }else {
+        die (mysqli_error($conn));
+    }
 } 
 
 ?>
@@ -43,7 +51,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="form-group">
             <label for="availability">Availability:</label>
-            <input type="checkbox" id="availability" name="availability">
+            <input type="checkbox" id="availability" name="availability" value="1">
         </div>
         <button name="submit">Submit</button>
     </form>
