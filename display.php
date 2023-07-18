@@ -54,7 +54,7 @@ include "connect.php";
 </head>
 
 <body>
-    <div class="button-container">
+    <div class=" button-container">
         <button id="add-button"><a href="add.php">Add</a></button>
     </div>
     <table>
@@ -88,7 +88,7 @@ include "connect.php";
     <td> 
     <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
 
-    <button class="btn btn-danger"><a href="delete.php? deleteid=' . $id . '"
+    <button class="btn btn-danger" onclick="msg()"><a href="delete.php? deleteid=' . $id . '"
     class="text-light">delete</a></button>
 </td>
     </tr>
@@ -105,3 +105,13 @@ include "connect.php";
 </body>
 
 </html>
+<script>
+function msg() {
+    var confirmation = confirm("Are you want to delete?")
+    if (confirmation) {
+        alert("deleted successfully!")
+    } else {
+
+    }
+}
+</script>

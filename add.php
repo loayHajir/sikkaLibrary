@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="../SikkaLibrary/style.css">
 </head>
 
 <body>
