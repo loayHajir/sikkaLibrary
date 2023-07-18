@@ -1,96 +1,107 @@
-    <?php
-    include "connect.php";
-    ?>
-    <!DOCTYPE html>
-    <html>
+<?php
+include "connect.php";
+?>
+<!DOCTYPE html>
+<html>
 
-    <head>
-        <title>Book Table</title>
-        <style>
-            /* CSS styling for the table */
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
+<head>
+    <title>Book Table</title>
+    <style>
+    /* CSS styling for the table */
+    button {
+        padding: 0.5rem 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-            th,
-            td {
-                padding: 8px;
-                text-align: left;
-                border-bottom: 1px solid #ddd;
-            }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-            th {
-                background-color: #f2f2f2;
-            }
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-            .button-container {
-                text-align: left;
-            }
+    th {
+        background-color: #f2f2f2;
+    }
 
-            .button-container button {
-                padding: 0.5rem 1rem;
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-        </style>
-    </head>
+    .button-container {
+        text-align: left;
+    }
 
-    <body>
-        <div class="button-container">
-            <button id="add-button">Add</button>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Book Name</th>
-                    <th>Description</th>
-                    <th>Language</th>
-                    <th>Available</th>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-    <?php
-    $SQL = "select * from `books`";
-    $result = mysqli_query($conn, $SQL);
-    if($result){
-    while ($row = mysqli_fetch_assoc($result)) {
-    $id = $row ['ID'];
-    $bookname= $row['Bookname'];
-    $desc = $row['Description'];
-    $lang = $row['Language'];
-    $available=$row['Available'];
-    echo ' 
+    .button-container button {
+        padding: 0.5rem 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="button-container">
+        <button id="add-button"><a href="add.php">Add</a></button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Description</th>
+                <th>Language</th>
+                <th>Available</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <?php
+            $SQL = "select * from `books`";
+            $result = mysqli_query($conn, $SQL);
+            if ($result) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $id = $row['ID'];
+                    $bookname = $row['BookName'];
+                    $desc = $row['Description'];
+                    $lang = $row['Language'];
+                    $available = $row['Avilable'];
+                    echo ' 
     <tr> 
-    <th scope="row">'.$id.'</th>
-    <td>'.$bookname.'</td>
-    <td>'.$desc.'</td>
-    <td>'.$lang.'</td>
-    <td>'.$available.'</td>
+    <th scope="row">' . $id . '</th>
+    <td>' . $bookname . '</td>
+    <td>' . $desc . '</td>
+    <td>' . $lang . '</td>
+    <td>' . $available . '</td>
     <td> 
-    <button class="btn btn-primary"><a href="update.php? upadateid='.$id.'" class="text-light">Update</a></button>
+    <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
 
-    <button class="btn btn-danger"><a href="delete.php? deleteid='.$id.'"
+    <button class="btn btn-danger"><a href="delete.php? deleteid=' . $id . '"
     class="text-light">delete</a></button>
 </td>
     </tr>
     ';
-    }
+                }
 
-    }
+            }
 
-    ?>
- 
-            </tbody>
-        </table>
+            ?>
 
-    </body>
+        </tbody>
+    </table>
 
-    </html>
+</body>
 
-    <!-- <button type="delete">Delete</button> <button
-                type="update">Update</button> -->
+</html>
