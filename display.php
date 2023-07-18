@@ -88,7 +88,7 @@ include "connect.php";
     <td> 
     <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
 
-    <button class="btn btn-danger" onclick="msg()"><a href="delete.php? deleteid=' . $id . '"
+    <button class="btn btn-danger" onclick="return msg()"><a href="delete.php? deleteid=' . $id . '"
     class="text-light">delete</a></button>
 </td>
     </tr>
@@ -107,11 +107,13 @@ include "connect.php";
 </html>
 <script>
 function msg() {
-    var confirmation = confirm("Are you want to delete?")
+    var confirmation = confirm("Are you want to delete?");
+    // console.log(confirmation);
     if (confirmation) {
-        alert("deleted successfully!")
+        alert("deleted successfully!");
+        // return true:
     } else {
-
+        return false;
     }
 }
 </script>
