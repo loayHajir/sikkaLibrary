@@ -88,7 +88,7 @@ include "connect.php";
     <td> 
     <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
 
-    <button class="btn btn-danger"><a href="delete.php? deleteid=' . $id . '"
+    <button class="btn btn-danger" onclick="msg()"><a href="delete.php? deleteid=' . $id . '"
     class="text-light">delete</a></button>
 </td>
     </tr>
@@ -101,7 +101,11 @@ include "connect.php";
 
         </tbody>
     </table>
-
 </body>
 
 </html>
+<script>
+    function msg(){
+        
+    }
+</script>
