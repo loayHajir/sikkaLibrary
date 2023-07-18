@@ -43,10 +43,10 @@ if (isset($_POST['submit'])) {
         <div class="form-group">
             <label for="language">Language:</label>
             <select id="language" name="language" required>
-                <option value="english">English</option>
-                <option value="arabic">Arabic</option>
-                <option value="french">French</option>
-                <option value="spanish">Spanish</option>
+                <option value="English">English</option>
+                <option value="Arabic">Arabic</option>
+                <option value="French">French</option>
+                <option value="Spanish">Spanish</option>
             </select>
         </div>
         <div class="form-group">
