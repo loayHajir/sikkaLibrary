@@ -1,14 +1,17 @@
 <?php
 
 include "connect.php";
+
 if (isset($_POST['submit'])) {
+    sanitizeXSS();
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
-    $lang = $_POST['language'];
+    $lang = $_POST['language']; 
     $available =$_POST['availability'];
     // var_dump($_POST);
 
-    $sql = "insert into `books` (ID,BookName,Description,Language,Avilable) values('','$bookName','$des','$lang','$available')";
+    $sql = "insert into `books` (ID,BookName,Description,Language,Available) values('','$bookName','$des','$lang','$available')";
+    // var_dump($sql);
     $result = mysqli_query($conn,$sql);
     if ($result) {
         // echo "Data Insert Successfully";

@@ -7,14 +7,14 @@ $myRow = mysqli_fetch_assoc($myResult);
 $myName = $myRow['BookName'];
 $mydes = $myRow['Description'];
 $mylang = $myRow['Language'];
-$myavai = $myRow['Avilable'];
+$myavai = $myRow['Available'];
 if (isset($_POST['update'])) {
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
     $lang = $_POST['language'];
     $available = $_POST['availability'];
     // var_dump($_POST);
-    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Avilable='$available'where id='$id'";
+    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Available='$available'where id='$id'";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data update Successfully";

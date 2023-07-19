@@ -77,7 +77,7 @@ include "connect.php";
                     $bookname = $row['BookName'];
                     $desc = $row['Description'];
                     $lang = $row['Language'];
-                    $available = $row['Avilable'];
+                    $available = $row['Available'];
                     echo ' 
     <tr> 
     <th scope="row">' . $id . '</th>
@@ -110,11 +110,7 @@ function msg() {
     if (confirmation) {
         alert("deleted successfully!");
     } else {
-<<<<<<< HEAD
-return false;
-=======
         return false;
->>>>>>> 6e6a2d92ac9bdd40da1c7cc92fca47e32e200542
     }
 }
 
