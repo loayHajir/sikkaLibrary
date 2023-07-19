@@ -106,11 +106,15 @@ include "connect.php";
 </html>
 <script>
 function msg() {
-    var confirmation = confirm("Are you want to delete?")
+    var confirmation = confirm("Are you want to delete?");
     if (confirmation) {
-        alert("deleted successfully!")
+        alert("deleted successfully!");
     } else {
+<<<<<<< HEAD
 return false;
+=======
+        return false;
+>>>>>>> 6e6a2d92ac9bdd40da1c7cc92fca47e32e200542
     }
 }
 
