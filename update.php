@@ -14,7 +14,7 @@ if (isset($_POST['update'])) {
     $lang = $_POST['language'];
     $available = $_POST['availability'];
     // var_dump($_POST);
-    $sql = "update `books`set id='$id',BookName='$bookName',Description='$des',Language='$lang',Avilable='$available'where id='$id'";
+    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Avilable='$available'where id='$id'";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data update Successfully";

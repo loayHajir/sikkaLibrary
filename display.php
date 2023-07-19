@@ -101,11 +101,15 @@ include "connect.php";
 
         </tbody>
     </table>
-
 </body>
 
 </html>
 <script>
+<<<<<<< HEAD
+    function msg(){
+        
+    }
+=======
 function msg() {
     var confirmation = confirm("Are you want to delete?");
     if (confirmation) {
@@ -114,4 +118,5 @@ function msg() {
         return false;
     }
 }
+>>>>>>> 898f9c97ef900c881bbddaaf470e4740c484201e
 </script>
