@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     var_dump($_POST);
 
 
-    $sql = "insert into `books` (ID,BookName,Description,Language,Avilable,PDF) values('','$bookName','$des','$lang','$available','$pdf')";
+    $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF) values('','$bookName','$des','$lang','$available','$pdf')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data Insert Successfully";

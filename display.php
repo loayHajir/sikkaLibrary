@@ -73,6 +73,7 @@ include "connect.php";
                 <th>PDF</th>
             </tr>
         </thead>
+
         <tbody id="table-body">
             <?php
             $SQL = "select * from `books`";
@@ -84,7 +85,10 @@ include "connect.php";
                     $desc = $row['Description'];
                     $lang = $row['Language'];
                     $available = $row['Avilable'];
+
                     $pdf = $row['PDF'];
+
+                    $available = $row['Available'];
                     echo ' 
     <tr> 
     <th scope="row">' . $id . '</th>
@@ -100,8 +104,9 @@ include "connect.php";
     class="text-light">delete</a></button>
     </td>
     </tr>';
-                }}
-                ?>
+                }
+            }
+            ?>
         </tbody>
     </table>
 </body>
@@ -109,6 +114,7 @@ include "connect.php";
 </html>
 <script>
 function msg() {
+
     var confirmation = confirm("Are you want to delete?");
     if (confirmation) {
         alert("deleted successfully!");
