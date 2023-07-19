@@ -54,13 +54,10 @@ include "connect.php";
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="button-container">
-        <button id="add-button"><a href="add.php">Add</a></button>
-=======
+
+
     <div class=" button-container">
         <button id="add-button"  ><a href="add.php">Add</a></button>
->>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
     </div>
     <table>
         <thead>
@@ -70,8 +67,11 @@ include "connect.php";
                 <th>Description</th>
                 <th>Language</th>
                 <th>Available</th>
+                <th>PDF</th>
+
             </tr>
         </thead>
+
         <tbody id="table-body">
             <?php
             $SQL = "select * from `books`";
@@ -83,6 +83,7 @@ include "connect.php";
                     $desc = $row['Description'];
                     $lang = $row['Language'];
                     $available = $row['Avilable'];
+                    $pdf = $pdf["PDF"]; 
                     echo ' 
     <tr> 
     <th scope="row">' . $id . '</th>
@@ -90,6 +91,7 @@ include "connect.php";
     <td>' . $desc . '</td>
     <td>' . $lang . '</td>
     <td>' . $available . '</td>
+    <td>' . $pdf . '</td> 
     <td> 
     <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
 
@@ -105,27 +107,12 @@ include "connect.php";
 
 </html>
 <script>
-<<<<<<< HEAD
     function msg(){
-=======
-function msg() {
->>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
     var confirmation = confirm("Are you want to delete?");
     if (confirmation) {
         alert("deleted successfully!");
     } else {
-<<<<<<< HEAD
         return false;
     }
 }
-=======
-<<<<<<< HEAD
-return false;
-=======
-        return false;
->>>>>>> 6e6a2d92ac9bdd40da1c7cc92fca47e32e200542
-    }
-}
-
->>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
 </script>

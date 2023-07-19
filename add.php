@@ -72,10 +72,3 @@ if (isset($_POST['submit'])) {
 </body>
 
 </html>
-<<<<<<< HEAD
-
-=======
-<script>
-
-</script>
->>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
