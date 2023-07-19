@@ -108,10 +108,8 @@ include "connect.php";
 <script>
 function msg() {
     var confirmation = confirm("Are you want to delete?");
-    // console.log(confirmation);
     if (confirmation) {
         alert("deleted successfully!");
-        // return true:
     } else {
         return false;
     }
