@@ -54,8 +54,17 @@ include "connect.php";
 </head>
 
 <body>
-    <div class=" button-container">
+<<<<<<< HEAD
+    <div class="button-container">
         <button id="add-button"><a href="add.php">Add</a></button>
+=======
+    <div class=" button-container">
+<<<<<<< HEAD
+        <button id="add-button"><a href="add.php">Add</a></button>
+=======
+        <button id="add-button"  ><a href="add.php">Add</a></button>
+>>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
+>>>>>>> 0ae9fbf06929600952669eb42f30cdcc12ac2d10
     </div>
     <table>
         <thead>
@@ -78,8 +87,12 @@ include "connect.php";
                     $bookname = $row['BookName'];
                     $desc = $row['Description'];
                     $lang = $row['Language'];
+<<<<<<< HEAD
                     $available = $row['Avilable'];
                     $pdf = $row['PDF'];
+=======
+                    $available = $row['Available'];
+>>>>>>> 0ae9fbf06929600952669eb42f30cdcc12ac2d10
                     echo ' 
     <tr> 
     <th scope="row">' . $id . '</th>
@@ -93,27 +106,45 @@ include "connect.php";
 
     <button class="btn btn-danger" onclick="return msg()"><a href="delete.php? deleteid=' . $id . '"
     class="text-light">delete</a></button>
-</td>
-    </tr>
-    ';
-                }
-
-            }
-
-            ?>
-
+    </td>
+    </tr>';
+                }}
+                ?>
         </tbody>
     </table>
 </body>
 
 </html>
 <script>
+<<<<<<< HEAD
+    function msg(){
+=======
 function msg() {
+>>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
     var confirmation = confirm("Are you want to delete?");
     if (confirmation) {
         alert("deleted successfully!");
     } else {
+<<<<<<< HEAD
         return false;
     }
 }
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        return false;
+    }
+}
+=======
+<<<<<<< HEAD
+return false;
+=======
+>>>>>>> cae9cc550ab51f1836339cf5c1671465d674c409
+        return false;
+    }
+}
+
+>>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
+>>>>>>> 0ae9fbf06929600952669eb42f30cdcc12ac2d10
 </script>

@@ -8,6 +8,7 @@ if (isset ($_GET['deleteid'])){
     if ($result){
         // echo "Delete successful";
         header ('location:display.php');
+            $message = "Book with ID $id has been successfully deleted.";
     } else{
         die(mysqli_error($conn));
     }

@@ -1,9 +1,12 @@
 <?php
 
 include "connect.php";
+
 if (isset($_POST['submit'])) {
+    sanitizeXSS();
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
+<<<<<<< HEAD
     $lang = $_POST['language'];
     $available = $_POST['availability'];
     $pdf = $_POST['upload'];
@@ -11,6 +14,15 @@ if (isset($_POST['submit'])) {
 
     $sql = "insert into `books` (ID,BookName,Description,Language,Avilable,PDF) values('','$bookName','$des','$lang','$available','$pdf')";
     $result = mysqli_query($conn, $sql);
+=======
+    $lang = $_POST['language']; 
+    $available =$_POST['availability'];
+    // var_dump($_POST);
+
+    $sql = "insert into `books` (ID,BookName,Description,Language,Available) values('','$bookName','$des','$lang','$available')";
+    // var_dump($sql);
+    $result = mysqli_query($conn,$sql);
+>>>>>>> 0ae9fbf06929600952669eb42f30cdcc12ac2d10
     if ($result) {
         // echo "Data Insert Successfully";
         header('location:display.php');
@@ -79,6 +91,10 @@ if (isset($_POST['submit'])) {
 </body>
 
 </html>
+<<<<<<< HEAD
+
+=======
 <script>
 
 </script>
+>>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
