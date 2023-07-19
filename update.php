@@ -7,14 +7,24 @@ $myRow = mysqli_fetch_assoc($myResult);
 $myName = $myRow['BookName'];
 $mydes = $myRow['Description'];
 $mylang = $myRow['Language'];
+<<<<<<< HEAD
 $myavai = $myRow['Avilable'];
+$mypdf = $myRow['PDF'];
+=======
+$myavai = $myRow['Available'];
+>>>>>>> 0ae9fbf06929600952669eb42f30cdcc12ac2d10
 if (isset($_POST['update'])) {
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
     $lang = $_POST['language'];
     $available = $_POST['availability'];
+    $pdf = $_POST['upload'];
     // var_dump($_POST);
-    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Avilable='$available'where id='$id'";
+<<<<<<< HEAD
+    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Avilable='$available',PDF='$pdf'where id='$id'";
+=======
+    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Available='$available'where id='$id'";
+>>>>>>> 0ae9fbf06929600952669eb42f30cdcc12ac2d10
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data update Successfully";
@@ -59,6 +69,13 @@ if (isset($_POST['update'])) {
             <input type="checkbox" id="availability" name="availability" <?php if ($myavai == '1')
                 echo 'checked="checked"'; ?> value="1">
         </div>
+        <div>
+            <label for="upload">Upload:</label>
+            <input type="file" id="upload" name="upload" value="<?php
+            echo $mypdf;
+            ?>">
+        </div>
+        <br>
         <button name=" update">Update</button>
     </form>
 </body>

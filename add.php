@@ -1,22 +1,25 @@
 <?php
 
 include "connect.php";
+
 if (isset($_POST['submit'])) {
+    sanitizeXSS();
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
     $lang = $_POST['language'];
-    $available =$_POST['availability'];
+    $available = $_POST['availability'];
+    $pdf = $_POST['upload'];
     // var_dump($_POST);
 
-    $sql = "insert into `books` (ID,BookName,Description,Language,Avilable) values('','$bookName','$des','$lang','$available')";
-    $result = mysqli_query($conn,$sql);
+    $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF) values('','$bookName','$des','$lang','$available','$pdf')";
+    $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data Insert Successfully";
-        header ('location:display.php');
-    }else {
-        die (mysqli_error($conn));
+        header('location:display.php');
+    } else {
+        die(mysqli_error($conn));
     }
-} 
+}
 
 ?>
 
@@ -27,23 +30,24 @@ if (isset($_POST['submit'])) {
 <head>
     <link rel="stylesheet" href="../SikkaLibrary/style.css">
     <style>
-        #back-button{
+    #back-button {
         padding: 0.5rem 1rem;
-        background-color:green;
+        background-color: green;
         color: white;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        }
-        #back-button a{
-            color:white;
-            text-decoration:none;
-        }
+    }
+
+    #back-button a {
+        color: white;
+        text-decoration: none;
+    }
     </style>
 </head>
 
 <body>
-<button id="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
+    <button id="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
     <h1>Add a Book</h1>
     <form method="post">
         <div class="form-group">
@@ -67,6 +71,11 @@ if (isset($_POST['submit'])) {
             <label for="availability">Availability:</label>
             <input type="checkbox" id="availability" name="availability" value="1">
         </div>
+        <div>
+            <label for="upload">Upload:</label>
+            <input type="file" id="upload" name="upload">
+        </div>
+        <br>
         <button name="submit">Submit</button>
     </form>
 </body>

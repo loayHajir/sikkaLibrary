@@ -48,7 +48,7 @@ include "connect.php";
 
     a {
         text-decoration: none;
-        color: white;
+        color: black;
     }
     </style>
 </head>
@@ -57,7 +57,8 @@ include "connect.php";
 
 
     <div class=" button-container">
-        <button id="add-button"  ><a href="add.php">Add</a></button>
+        <button id="add-button"><a href="add.php">Add</a></button>
+
     </div>
     <table>
         <thead>
@@ -68,7 +69,6 @@ include "connect.php";
                 <th>Language</th>
                 <th>Available</th>
                 <th>PDF</th>
-
             </tr>
         </thead>
 
@@ -83,7 +83,9 @@ include "connect.php";
                     $desc = $row['Description'];
                     $lang = $row['Language'];
                     $available = $row['Avilable'];
-                    $pdf = $pdf["PDF"]; 
+
+                    $pdf = $row['PDF'];
+                    $available = $row['Available'];
                     echo ' 
     <tr> 
     <th scope="row">' . $id . '</th>
@@ -91,7 +93,7 @@ include "connect.php";
     <td>' . $desc . '</td>
     <td>' . $lang . '</td>
     <td>' . $available . '</td>
-    <td>' . $pdf . '</td> 
+    <td> <a href="' . $pdf . '" download>' . $pdf . '</a> </td>
     <td> 
     <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
 
@@ -115,4 +117,5 @@ include "connect.php";
         return false;
     }
 }
+
 </script>
