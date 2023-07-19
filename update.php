@@ -7,12 +7,8 @@ $myRow = mysqli_fetch_assoc($myResult);
 $myName = $myRow['BookName'];
 $mydes = $myRow['Description'];
 $mylang = $myRow['Language'];
-<<<<<<< HEAD
 $myavai = $myRow['Avilable'];
 $mypdf = $myRow['PDF'];
-=======
-$myavai = $myRow['Available'];
->>>>>>> 0ae9fbf06929600952669eb42f30cdcc12ac2d10
 if (isset($_POST['update'])) {
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
@@ -20,11 +16,7 @@ if (isset($_POST['update'])) {
     $available = $_POST['availability'];
     $pdf = $_POST['upload'];
     // var_dump($_POST);
-<<<<<<< HEAD
     $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Avilable='$available',PDF='$pdf'where id='$id'";
-=======
-    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Available='$available'where id='$id'";
->>>>>>> 0ae9fbf06929600952669eb42f30cdcc12ac2d10
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data update Successfully";
@@ -55,10 +47,10 @@ if (isset($_POST['update'])) {
         <div class=" form-group">
             <label for="language">Language:</label>
             <select id="language" name="language">
-                <option value="lang">
+                <option value="<?php echo $mylang ; ?>">
                     <?php echo $mylang; ?>
                 </option>
-                <option value="English">English</option>
+                <option value=" English">English</option>
                 <option value="Arabic">Arabic</option>
                 <option value="French">French</option>
                 <option value="Spanish">Spanish</option>
