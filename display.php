@@ -48,14 +48,14 @@ include "connect.php";
 
     a {
         text-decoration: none;
-        color: white;
+        color: black;
     }
     </style>
 </head>
 
 <body>
     <div class=" button-container">
-        <button id="add-button"  ><a href="add.php">Add</a></button>
+        <button id="add-button"><a href="add.php">Add</a></button>
     </div>
     <table>
         <thead>
@@ -65,6 +65,7 @@ include "connect.php";
                 <th>Description</th>
                 <th>Language</th>
                 <th>Available</th>
+                <th>PDF</th>
             </tr>
         </thead>
         <tbody id="table-body">
@@ -78,6 +79,7 @@ include "connect.php";
                     $desc = $row['Description'];
                     $lang = $row['Language'];
                     $available = $row['Avilable'];
+                    $pdf = $row['PDF'];
                     echo ' 
     <tr> 
     <th scope="row">' . $id . '</th>
@@ -85,6 +87,7 @@ include "connect.php";
     <td>' . $desc . '</td>
     <td>' . $lang . '</td>
     <td>' . $available . '</td>
+    <td> <a href="' . $pdf . '" download>' . $pdf . '</a> </td>
     <td> 
     <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
 
@@ -110,12 +113,7 @@ function msg() {
     if (confirmation) {
         alert("deleted successfully!");
     } else {
-<<<<<<< HEAD
-return false;
-=======
         return false;
->>>>>>> 6e6a2d92ac9bdd40da1c7cc92fca47e32e200542
     }
 }
-
 </script>

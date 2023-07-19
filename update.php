@@ -8,13 +8,15 @@ $myName = $myRow['BookName'];
 $mydes = $myRow['Description'];
 $mylang = $myRow['Language'];
 $myavai = $myRow['Avilable'];
+$mypdf = $myRow['PDF'];
 if (isset($_POST['update'])) {
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
     $lang = $_POST['language'];
     $available = $_POST['availability'];
+    $pdf = $_POST['upload'];
     // var_dump($_POST);
-    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Avilable='$available'where id='$id'";
+    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Avilable='$available',PDF='$pdf'where id='$id'";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data update Successfully";
@@ -59,6 +61,13 @@ if (isset($_POST['update'])) {
             <input type="checkbox" id="availability" name="availability" <?php if ($myavai == '1')
                 echo 'checked="checked"'; ?> value="1">
         </div>
+        <div>
+            <label for="upload">Upload:</label>
+            <input type="file" id="upload" name="upload" value="<?php
+            echo $mypdf;
+            ?>">
+        </div>
+        <br>
         <button name=" update">Update</button>
     </form>
 </body>
