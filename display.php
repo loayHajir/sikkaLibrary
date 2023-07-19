@@ -54,8 +54,13 @@ include "connect.php";
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="button-container">
         <button id="add-button"><a href="add.php">Add</a></button>
+=======
+    <div class=" button-container">
+        <button id="add-button"  ><a href="add.php">Add</a></button>
+>>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
     </div>
     <table>
         <thead>
@@ -100,12 +105,27 @@ include "connect.php";
 
 </html>
 <script>
+<<<<<<< HEAD
     function msg(){
+=======
+function msg() {
+>>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
     var confirmation = confirm("Are you want to delete?");
     if (confirmation) {
         alert("deleted successfully!");
     } else {
+<<<<<<< HEAD
         return false;
     }
 }
+=======
+<<<<<<< HEAD
+return false;
+=======
+        return false;
+>>>>>>> 6e6a2d92ac9bdd40da1c7cc92fca47e32e200542
+    }
+}
+
+>>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
 </script>

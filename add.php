@@ -26,10 +26,24 @@ if (isset($_POST['submit'])) {
 
 <head>
     <link rel="stylesheet" href="../SikkaLibrary/style.css">
+    <style>
+        #back-button{
+        padding: 0.5rem 1rem;
+        background-color:green;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+        #back-button a{
+            color:white;
+            text-decoration:none;
+        }
+    </style>
 </head>
 
 <body>
-
+<button id="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
     <h1>Add a Book</h1>
     <form method="post">
         <div class="form-group">
@@ -58,4 +72,10 @@ if (isset($_POST['submit'])) {
 </body>
 
 </html>
+<<<<<<< HEAD
 
+=======
+<script>
+
+</script>
+>>>>>>> 47344cb3b5ca2f3717949eb5cc901e8a529c39db
