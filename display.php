@@ -93,7 +93,7 @@ include "connect.php";
     <td>' . $desc . '</td>
     <td>' . $lang . '</td>
     <td>' . $available . '</td>
-    <td> <a href="download.php?file=' . urlencode($pdf) . '">Download PDF</a></td>
+    <td> <a id="down" href="download.php?file=' . urlencode($pdf) . '">Download PDF</a></td>
     <td> 
     <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
 

@@ -12,35 +12,31 @@ if (isset($_POST['submit'])) {
     // var_dump($_FILES);
     // Upload file for PDF files
     $uploadDir = "uploads/";
-
     // Check if the file is a PDF
     $fileType = strtolower(pathinfo($pdf, PATHINFO_EXTENSION));
     if ($fileType !== "pdf") {
         die("Only PDF files are allowed.");
     }
-    
-     // Move the uploaded file to the uploads 
-    $targetFile = $uploadDir . rand() . '-' . str_replace(' ', '-',strtolower(basename($pdf)));
+    // Move the uploaded file to the uploads 
+    $targetFile = $uploadDir . rand() . '-' . str_replace(' ', '-', strtolower(basename($pdf)));
     // var_dump($targetFile);
-    // if(file_exists($targetFile)){
-    //     $targetFile = $uploadDir .str_replace(' ', '-',strtolower(basename($pdf)));
-    // }
-    if (move_uploaded_file($_FILES["upload"]["tmp_name"], $targetFile)) {
-    $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF) values('','$bookName','$des','$lang','$available','$targetFile')";
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        // echo "Data Insert Successfully";
-        header('location:display.php');
-    } else {
-        die(mysqli_error($conn));
+    if (file_exists($targetFile)) {
+        $targetFile = $uploadDir . str_replace(' ', '-', strtolower(basename($pdf)));
     }
-} else {
-    die("Error uploading the file.");
-}
+    if (move_uploaded_file($_FILES["upload"]["tmp_name"], $targetFile)) {
+        $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF) values('','$bookName','$des','$lang','$available','$targetFile')";
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            // echo "Data Insert Successfully";
+            header('location:display.php');
+        } else {
+            die(mysqli_error($conn));
+        }
+    } else {
+        die("Error uploading the file.");
+    }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
