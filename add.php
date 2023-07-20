@@ -26,12 +26,12 @@ if (isset($_POST['submit'])) {
     if (move_uploaded_file($_FILES["upload"]["tmp_name"], $targetFile)) {
         $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF) values('','$bookName','$des','$lang','$available','$targetFile')";
         $result = mysqli_query($conn, $sql);
-        if ($result) {
-            // echo "Data Insert Successfully";
-            header('location:display.php');
-        } else {
-            die(mysqli_error($conn));
-        }
+            if ($result) {
+                // echo "Data Insert Successfully";
+                header('location:display.php');
+            } else {
+                die(mysqli_error($conn));
+            }
     } else {
         die("Error uploading the file.");
     }
