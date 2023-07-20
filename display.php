@@ -84,11 +84,8 @@ include "connect.php";
                     $bookname = $row['BookName'];
                     $desc = $row['Description'];
                     $lang = $row['Language'];
-                    $available = $row['Avilable'];
-
-                    $pdf = $row['PDF'];
-
                     $available = $row['Available'];
+                    $pdf = $row['PDF'];                   
                     echo ' 
     <tr> 
     <th scope="row">' . $id . '</th>
@@ -96,7 +93,7 @@ include "connect.php";
     <td>' . $desc . '</td>
     <td>' . $lang . '</td>
     <td>' . $available . '</td>
-    <td> <a href="' . $pdf . '" download id="down">' . $pdf . '</a> </td>
+    <td> <a href="download.php?file=' . urlencode($pdf) . '">Download PDF</a></td>
     <td> 
     <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
 

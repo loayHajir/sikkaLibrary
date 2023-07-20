@@ -7,12 +7,26 @@ if (isset($_POST['submit'])) {
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
     $lang = $_POST['language'];
-    $available = $_POST['Available'];
-    $pdf = $_POST['upload'];
-    var_dump($_POST);
+    $available = isset($_POST['availability']) ? $_POST['availability'] : 0;
+    $pdf = $_FILES['upload']['name']; // Get the name of the uploaded pdf file
+    // var_dump($_FILES);
+    // Upload file for PDF files
+    $uploadDir = "uploads/";
 
-
-    $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF) values('','$bookName','$des','$lang','$available','$pdf')";
+    // Check if the file is a PDF
+    $fileType = strtolower(pathinfo($pdf, PATHINFO_EXTENSION));
+    if ($fileType !== "pdf") {
+        die("Only PDF files are allowed.");
+    }
+    
+     // Move the uploaded file to the uploads 
+    $targetFile = $uploadDir . rand() . '-' . str_replace(' ', '-',strtolower(basename($pdf)));
+    // var_dump($targetFile);
+    // if(file_exists($targetFile)){
+    //     $targetFile = $uploadDir .str_replace(' ', '-',strtolower(basename($pdf)));
+    // }
+    if (move_uploaded_file($_FILES["upload"]["tmp_name"], $targetFile)) {
+    $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF) values('','$bookName','$des','$lang','$available','$targetFile')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data Insert Successfully";
@@ -20,8 +34,10 @@ if (isset($_POST['submit'])) {
     } else {
         die(mysqli_error($conn));
     }
+} else {
+    die("Error uploading the file.");
 }
-
+}
 ?>
 
 
@@ -50,7 +66,7 @@ if (isset($_POST['submit'])) {
 <body>
     <button id="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
     <h1>Add a Book</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="bookName">Book Name:</label>
             <input type="text" id="bookName" name="bookName" required>

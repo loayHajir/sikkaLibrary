@@ -7,7 +7,7 @@ $myRow = mysqli_fetch_assoc($myResult);
 $myName = $myRow['BookName'];
 $mydes = $myRow['Description'];
 $mylang = $myRow['Language'];
-$myavai = $myRow['Avilable'];
+$myavai = $myRow['Available'];
 $mypdf = $myRow['PDF'];
 if (isset($_POST['update'])) {
     $bookName = $_POST['bookName'];
@@ -16,7 +16,7 @@ if (isset($_POST['update'])) {
     $available = $_POST['availability'];
     $pdf = $_POST['upload'];
     // var_dump($_POST);
-    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Avilable='$available',PDF='$pdf'where id='$id'";
+    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Available='$available',PDF='$pdf'where id='$id'";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data update Successfully";

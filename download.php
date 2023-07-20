@@ -2,7 +2,7 @@
 if (isset($_GET['file'])) {
     $file = $_GET['file'];
     $file = urldecode($file);
-    $filePath = 'uploads/' . $file;
+    $filePath = $file;
 
     if (file_exists($filePath)) {
         header('Content-Description: File Transfer');
