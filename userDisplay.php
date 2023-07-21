@@ -54,6 +54,17 @@ include "connect.php";
         color: blue;
         text-decoration: underline;
     }
+
+    #logout {
+        padding: 0.5rem 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+
     </style>
 </head>
 
@@ -90,6 +101,9 @@ include "connect.php";
     <td>' . $lang . '</td>
     <td>' . $available . '</td>
     <td> <a id="down" href="download.php?file=' . urlencode($pdf) . '">Download PDF</a></td>
+    <td> 
+    <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
+    </td>
     </tr>';
                 }
             }
