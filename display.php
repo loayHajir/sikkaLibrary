@@ -15,60 +15,64 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
 <head>
     <title>Book Table</title>
     <style>
-    /* CSS styling for the table */
-    button {
-        padding: 0.5rem 1rem;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+        /* CSS styling for the table */
+        .btn,
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Arial, Helvetica, sans-serif;
+            color:white;
+        }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
-    th {
-        background-color: #f2f2f2;
-    }
+        th {
+            background-color: #f2f2f2;
+        }
 
-    .button-container {
-        text-align: left;
-    }
+        .button-container {
+            text-align: left;
+        }
 
-    .button-container button {
-        padding: 0.5rem 1rem;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+        .button-container button {
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    a {
-        text-decoration: none;
-        color: white;
-    }
+        a {
+            text-decoration: none;
+            /* color: white; */
+        }
 
-    #down {
-        color: blue;
-        text-decoration: underline;
-    }
+        #down {
+            color: blue;
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
-    <div class=" button-container">
-        <button id="add-button"><a href="add.php">Add</a></button>
+    <div class="button-container">
+        <a class="btn btn-primary" id="add-button" href="add.php">Add</a>
     </div>
     <table>
         <thead>
@@ -92,7 +96,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
                     $bookname = $row['BookName'];
                     $desc = $row['Description'];
                     $lang = $row['Language'];
-                    $available = $row['Available'];                  
+                    $available = $row['Available'];
                     echo ' 
     <tr> 
     <th scope="row">' . $id . '</th>
@@ -101,10 +105,10 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
     <td>' . $lang . '</td>
     <td>' . $available . '</td>
     <td> 
-    <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
+    <a class="btn btn-primary" href="update.php? updateid=' . $id . '" class="text-light">Update</a>
 
-    <button class="btn btn-danger" onclick="return msg()"><a href="delete.php? deleteid=' . $id . '"
-    class="text-light">delete</a></button>
+    <a class="btn btn-danger" onclick="return msg()" href="delete.php? deleteid=' . $id . '"
+    class="text-light">delete</a>
     </td>
     </tr>';
                 }
@@ -116,14 +120,14 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
 
 </html>
 <script>
-function msg() {
+    function msg() {
 
-    var confirmation = confirm("Are you want to delete?");
-    if (confirmation) {
-        alert("deleted successfully!");
-    } else {
-        return false;
+        var confirmation = confirm("Are you want to delete?");
+        if (confirmation) {
+            alert("deleted successfully!");
+        } else {
+            return false;
+        }
+
     }
-
-}
 </script>
