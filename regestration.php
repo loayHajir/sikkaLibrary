@@ -8,7 +8,7 @@ if (isset($_POST['Register'])) {
     $mail = $_POST['email'];
     $dob = $_POST['dob'];
     $gender = $_POST['gender'];
-    $sql = "insert into `login` (id,username,password,phoneno,email,dob,gender) values('','$name','$pass','$phone','$mail','$dob','$gender')";
+    $sql = "insert into `login` (username,password,phoneno,email,dob,gender,Type) values('$name','$pass','$phone','$mail','$dob','$gender','Admin')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "data insert succssefully";
