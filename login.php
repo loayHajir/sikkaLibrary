@@ -18,7 +18,6 @@ if(isset($_POST['login'])){
         echo "Invalid username or password.";
     } else {
 
-        $row = mysqli_fetch_array($query);
         $_SESSION['Type'] = $row['Type'];
         if ( $_SESSION['Type'] == "Admin") {
 
