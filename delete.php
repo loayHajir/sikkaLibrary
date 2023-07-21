@@ -4,7 +4,7 @@ include 'connect.php';
 session_start(); // Start the PHP session
 
 // Check if the user is logged in and is an admin
-if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'admin') {
+if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
     // If the user is not an admin, redirect them to the login page or show an error message
     header("location: login.php");
     exit(); // Stop script execution after redirecting

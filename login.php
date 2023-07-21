@@ -5,7 +5,6 @@ session_start();
 
 if(isset($_POST['login'])){
 
-    // Assuming you have a database connection established
     $username = $_POST['username'];
     $password = $_POST['password'];
 
