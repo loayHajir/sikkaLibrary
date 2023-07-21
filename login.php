@@ -16,12 +16,15 @@ if (isset($_POST['login'])) {
         // Username not found in the database
         echo "Invalid username or password.";
     } else {
+        if ($row['Type'] == "Admin") {
             header("location:display.php");
-    
+
+        } else {
+            header("location:userDisplay.php");
+
+        }
+
     }
-
-
-
 }
 
 

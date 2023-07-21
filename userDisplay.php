@@ -59,9 +59,6 @@ include "connect.php";
 </head>
 
 <body>
-    <div class=" button-container">
-        <button id="add-button"><a href="add.php">Add</a></button>
-    </div>
     <table>
         <thead>
             <tr>
@@ -70,7 +67,7 @@ include "connect.php";
                 <th>Description</th>
                 <th>Language</th>
                 <th>Available</th>
-                <th></th>
+                <th>PDF</th>
             </tr>
         </thead>
 
@@ -84,7 +81,8 @@ include "connect.php";
                     $bookname = $row['BookName'];
                     $desc = $row['Description'];
                     $lang = $row['Language'];
-                    $available = $row['Available'];                  
+                    $available = $row['Available'];
+                    $pdf = $row['PDF'];                   
                     echo ' 
     <tr> 
     <th scope="row">' . $id . '</th>
@@ -92,12 +90,7 @@ include "connect.php";
     <td>' . $desc . '</td>
     <td>' . $lang . '</td>
     <td>' . $available . '</td>
-    <td> 
-    <button class="btn btn-primary"><a href="update.php? updateid=' . $id . '" class="text-light">Update</a></button>
-
-    <button class="btn btn-danger" onclick="return msg()"><a href="delete.php? deleteid=' . $id . '"
-    class="text-light">delete</a></button>
-    </td>
+    <td> <a id="down" href="download.php?file=' . urlencode($pdf) . '">Download PDF</a></td>
     </tr>';
                 }
             }
@@ -107,15 +100,3 @@ include "connect.php";
 </body>
 
 </html>
-<script>
-function msg() {
-
-    var confirmation = confirm("Are you want to delete?");
-    if (confirmation) {
-        alert("deleted successfully!");
-    } else {
-        return false;
-    }
-
-}
-</script>
