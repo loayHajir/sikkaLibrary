@@ -1,5 +1,4 @@
 <?php
-
 include "connect.php";
 
 session_start(); // Start the PHP session
