@@ -30,7 +30,7 @@ if (isset($_POST['login'])) {
 <html>
 
 <head>
-    <title>Login and Registration Form</title>
+    <title>Login </title>
     <style>
     body {
         font-family: Arial, sans-serif;
@@ -85,7 +85,7 @@ if (isset($_POST['login'])) {
 
 <body>
     <div class="login-container">
-        <h2>Login and Registration</h2>
+        <h2>Login Form</h2>
         <form action="login.php" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username">
@@ -96,7 +96,7 @@ if (isset($_POST['login'])) {
             <div class="btn-container">
                 <input type="submit" value="Login" name="login">
                 <input type="submit" value="Registration" formaction="regestration.php">
-           
+
             </div>
         </form>
     </div>
