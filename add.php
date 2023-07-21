@@ -1,7 +1,5 @@
 <?php
-
 include "connect.php";
-
 if (isset($_POST['submit'])) {
     sanitizeXSS();
     $bookName = $_POST['bookName'];
