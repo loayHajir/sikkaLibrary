@@ -95,7 +95,8 @@ if (isset($_POST['login'])) {
             <br>
             <div class="btn-container">
                 <input type="submit" value="Login" name="login">
-                <input type="submit" value="Registration">
+                <input type="submit" value="Registration" formaction="regestration.php">
+           
             </div>
         </form>
     </div>

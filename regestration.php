@@ -93,6 +93,20 @@ if (isset($_POST['Register'])) {
     .registration-container input[type="submit"]:hover {
         background-color: #45a049;
     }
+     #back{
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        
+    }
+    #back a {
+        color: white;
+        text-decoration: none;
+    }
     </style>
 </head>
 
@@ -118,6 +132,8 @@ if (isset($_POST['Register'])) {
                 <input type="radio" id="female" name="gender" value="Female">
             </div>
             <input type="submit" value="Register" name="Register">
+            <button id="back" onclick="history.back()"><a href="login.php">Back</a></button>
+
         </form>
     </div>
 </body>

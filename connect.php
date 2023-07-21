@@ -1,7 +1,7 @@
 <?php
 
 $serverName = 'localhost';
-$userName = 'root';
+$userName = 'root'; 
 $password = '';
 $db = 'sikka library';
 $conn = mysqli_connect($serverName, $userName, $password, $db);
