@@ -1,7 +1,9 @@
 <?php
 include 'connect.php';
 
-if (isset($_POST['login'])) {
+session_start();
+
+if(isset($_POST['login'])){
 
     // Assuming you have a database connection established
     $username = $_POST['username'];
@@ -11,12 +13,16 @@ if (isset($_POST['login'])) {
     $query = mysqli_query($conn, "select * from login where username = '$username' && password = '$password'");
     $result = mysqli_num_rows($query);
     $row = mysqli_fetch_array($query);
-
+    
     if (!$result) {
         // Username not found in the database
         echo "Invalid username or password.";
     } else {
-        if ($row['Type'] == "Admin") {
+
+        $row = mysqli_fetch_array($query);
+        $_SESSION['Type'] = $row['Type'];
+        if ( $_SESSION['Type'] == "Admin") {
+
             header("location:display.php");
 
         } else {
