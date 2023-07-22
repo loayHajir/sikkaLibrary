@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     $des = $_POST['description'];
     $lang = $_POST['language'];
     $available = isset($_POST['availability']) ? $_POST['availability'] : 0;
-    $pdf = $_FILES['upload']['name']; // Get the name of the uploaded pdf file
+    $pdf = $_FILES['pdf']['name']; // Get the name of the uploaded pdf file
     // var_dump($_FILES);
     // Upload file for PDF files
     $uploadDir = "uploads/";
@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
 <head>
     <link rel="stylesheet" href="../SikkaLibrary/style.css">
     <style>
-    #back-button {
+    .back-button {
         padding: 0.5rem 1rem;
         background-color: green;
         color: white;
@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
         cursor: pointer;
     }
 
-    #back-button a {
+    .back-button a {
         color: white;
         text-decoration: none;
     }
@@ -69,17 +69,13 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    
-    <button id="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
+
+    <button class="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
     <h1>Add a Book</h1>
     <form method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="bookName">Book Name:</label>
             <input type="text" id="bookName" name="bookName" required>
-        </div>
-        <div class="form-group">
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="5" required></textarea>
         </div>
         <div class="form-group">
             <label for="language">Language:</label>
@@ -91,15 +87,36 @@ if (isset($_POST['submit'])) {
             </select>
         </div>
         <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <div class="form-group">
+            <label for="pageNo">Number Of Page:</label>
+            <input type="number" id="pageNo" name="pageNO" required>
+        </div>
+        <div class="form-group">
+            <label for="dop">Date Of Publication:</label>
+            <input type="date" id="dop" name="dop" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
             <label for="availability">Availability:</label>
             <input type="checkbox" id="availability" name="availability" value="1">
         </div>
         <div>
-            <label for="upload">Upload:</label>
-            <input type="file" id="upload" name="upload">
+            <label for="pdf">Upload:</label>
+            <input type="file" id="pdf" name="pdf">
+            <input type="file" id="image" name="image">
         </div>
         <br>
-        <button name="submit">Submit</button>
+        <button name="submit" class="back-button">Submit</button>
     </form>
 </body>
 
