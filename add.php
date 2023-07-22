@@ -16,34 +16,60 @@ if (isset($_POST['submit'])) {
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
     $lang = $_POST['language'];
+    $title = $_POST['title'];
+    $author = $_POST['author'];
+    $pageno = $_POST['pageNO'];
+    $dop = $_POST['dop'];
+    $img = $_FILES['image']['name'];
     $available = isset($_POST['availability']) ? $_POST['availability'] : 0;
     $pdf = $_FILES['pdf']['name']; // Get the name of the uploaded pdf file
     // var_dump($_FILES);
     // Upload file for PDF files
     $uploadDir = "uploads/";
+    $imagesDir = "images/";
     // Check if the file is a PDF
     $fileType = strtolower(pathinfo($pdf, PATHINFO_EXTENSION));
     if ($fileType !== "pdf") {
         die("Only PDF files are allowed.");
     }
+    // Check if the file is a png or jpg or jpeg
+    $fileTypeImg = strtolower(pathinfo($img, PATHINFO_EXTENSION));
+    var_dump($fileTypeImg);
+    if ($fileTypeImg !== "png" && $fileTypeImg !== "jpg" && $fileTypeImg !== "jpeg") {
+        die("Only png and jpg files are allowed.");
+    }
     // Move the uploaded file to the uploads 
     $targetFile = $uploadDir . rand() . '-' . str_replace(' ', '-', strtolower(basename($pdf)));
-    // var_dump($targetFile);
-    if (file_exists($targetFile)) {
-        $targetFile = $uploadDir . str_replace(' ', '-', strtolower(basename($pdf)));
-    }
-    if (move_uploaded_file($_FILES["upload"]["tmp_name"], $targetFile)) {
-        $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF) values('','$bookName','$des','$lang','$available','$targetFile')";
-        $result = mysqli_query($conn, $sql);
-            if ($result) {
-                // echo "Data Insert Successfully";
-                header('location:display.php');
-            } else {
-                die(mysqli_error($conn));
-            }
+    // Move the uploaded file to the images 
+    $targetFileImg = $imagesDir . rand() . '-' . str_replace(' ', '-', strtolower(basename($img)));
+    // // check if pdf exists
+    // if (file_exists($targetFile)) {
+    //     $targetFile = $uploadDir . str_replace(' ', '-', strtolower(basename($pdf)));
+    // }
+    // // check if image exists
+    // if (file_exists($targetFileImg)) {
+    //     $targetFileImg = $imagesDir . str_replace(' ', '-', strtolower(basename($img)));
+    // }
+    $rowpdf = $rowimg = '';
+    if ($pdf && move_uploaded_file($_FILES["pdf"]["tmp_name"], $targetFile)) {
+        $rowpdf = $targetFile;
     } else {
         die("Error uploading the file.");
     }
+    if ($img && move_uploaded_file($_FILES["image   "]["tmp_name"], $targetFileImg)) {
+        $rowimg = $targetFileImg;
+    } else {
+        die("Error uploading the file.");
+    }
+    $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF,title,author,pageNum,dop,image) values('','$bookName','$des','$lang','$available','$rowpdf','$title','$author','$pageno','$dop','$rowimg')";
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+        // echo "Data Insert Successfully";
+        header('location:display.php');
+    } else {
+        die(mysqli_error($conn));
+    }
+
 }
 ?>
 <!DOCTYPE html>

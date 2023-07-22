@@ -15,58 +15,59 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
 <head>
     <title>Book Table</title>
     <style>
-        /* CSS styling for the table */
-        .btn,
-        button {
-            padding: 0.5rem 1rem;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            display: inline-block;
-            font-family: Arial, Helvetica, sans-serif;
-            color:white;
-        }
+    /* CSS styling for the table */
+    .btn,
+    button {
+        padding: 0.5rem 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-        th,
-        td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-        th {
-            background-color: #f2f2f2;
-        }
+    th {
+        background-color: #f2f2f2;
+    }
 
-        .button-container {
-            text-align: left;
-        }
+    .button-container {
+        text-align: left;
+    }
 
-        .button-container button {
-            padding: 0.5rem 1rem;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+    .button-container button {
+        padding: 0.5rem 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-        a {
-            text-decoration: none;
-            /* color: white; */
-        }
+    a {
+        text-decoration: none;
+        color: white;
+    }
 
     #down {
         color: blue;
         text-decoration: underline;
     }
+
     #logout {
         padding: 0.5rem 1rem;
         background-color: #4CAF50;
@@ -85,9 +86,9 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
 
     <div class=" button-container">
         <button id="add-button"><a href="add.php">Add</a></button>
-        <td> 
-    <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
-    </td>
+        <td>
+            <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
+        </td>
     </div>
     <table>
         <thead>
@@ -135,14 +136,14 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
 
 </html>
 <script>
-    function msg() {
+function msg() {
 
-        var confirmation = confirm("Are you want to delete?");
-        if (confirmation) {
-            alert("deleted successfully!");
-        } else {
-            return false;
-        }
-
+    var confirmation = confirm("Are you want to delete?");
+    if (confirmation) {
+        alert("deleted successfully!");
+    } else {
+        return false;
     }
+
+}
 </script>

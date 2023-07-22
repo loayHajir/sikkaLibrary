@@ -66,20 +66,19 @@ include "connect.php";
         bottom: 20px;
         right: 50px;
     }
-
-
     </style>
 </head>
 
 <body>
-    <td> 
-    <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
+    <td>
+        <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
     </td>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Book Name</th>
+                <th>Image</th>
                 <th>Description</th>
                 <th>Language</th>
                 <th>Available</th>
@@ -98,16 +97,17 @@ include "connect.php";
                     $desc = $row['Description'];
                     $lang = $row['Language'];
                     $available = $row['Available'];
-                    $pdf = $row['PDF'];                   
+                    $pdf = $row['PDF'];
+                    $img = $row['image'];
                     echo ' 
     <tr> 
     <th scope="row">' . $id . '</th>
     <td>' . $bookname . '</td>
+    <td>' . ($img? '<img src="' . $img . '"/>' : 'No Image') .'</td>
     <td>' . $desc . '</td>
     <td>' . $lang . '</td>
     <td>' . $available . '</td>
     <td> <a id="down" href="download.php?file=' . urlencode($pdf) . '">Download PDF</a></td>
-   
     </tr>';
                 }
             }
