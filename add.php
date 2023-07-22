@@ -69,6 +69,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+    
     <button id="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
     <h1>Add a Book</h1>
     <form method="post" enctype="multipart/form-data">

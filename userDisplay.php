@@ -62,6 +62,9 @@ include "connect.php";
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+        right: 50px;
     }
 
 
@@ -69,6 +72,9 @@ include "connect.php";
 </head>
 
 <body>
+    <td> 
+    <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
+    </td>
     <table>
         <thead>
             <tr>
@@ -101,9 +107,7 @@ include "connect.php";
     <td>' . $lang . '</td>
     <td>' . $available . '</td>
     <td> <a id="down" href="download.php?file=' . urlencode($pdf) . '">Download PDF</a></td>
-    <td> 
-    <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
-    </td>
+   
     </tr>';
                 }
             }

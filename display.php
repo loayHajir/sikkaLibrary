@@ -63,12 +63,27 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         color: blue;
         text-decoration: underline;
     }
+    #logout {
+        padding: 0.5rem 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+        right: 50px;
+    }
     </style>
 </head>
 
 <body>
+
     <div class=" button-container">
         <button id="add-button"><a href="add.php">Add</a></button>
+        <td> 
+    <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
+    </td>
     </div>
     <table>
         <thead>
