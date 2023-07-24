@@ -9,6 +9,10 @@ include "connect.php";
 
     <style>
     /* // CSS styling for the  */
+    body {
+        padding: 0;
+        margin: 0;
+    }
     table button {
         padding: 0.5rem 1rem;
         background-color: #4CAF50;
@@ -21,6 +25,7 @@ include "connect.php";
     table {
         width: 100%;
         border-collapse: collapse;
+        margin-top: 20px;
     }
 
     th,
@@ -68,26 +73,107 @@ include "connect.php";
         bottom: 20px;
         right: 50px;
     }
-    </style>
+    ul,.lgo {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+width:100%;
+background-color: #333;
+font-family: "Times New Roman";
+font-size: 15px;
+}
+
+li {
+margin: 10px 30px 0 0;
+float: right;
+}
+
+li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+li a:hover:not(.active) {
+background-color: #111;
+}
+
+img {
+margin: 5px 0 0 30px;
+width: 7%;
+height: 55px;
+border-radius: 100px;
+}
+.lgo{
+    display : flex;
+}
+
+h1{
+    margin-left: 40px;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    
+}
+.header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:250px;
+        background-image: url('library.jpg'); /* Replace 'header_image.jpg' with the actual path to your image */
+        background-size: cover;
+        color: white;
+    }
+
+    .header-content .info {
+        max-width: 70%;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 100px;
+        font-size:30x;
+        text-align: center;
+    }
+
+    .header-content p {
+        margin-bottom: 10px;
+    }
+
+    .learn-more-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
 </head>
 
 <body>
 
-
 <nav>
+<div class="lgo">
+    <img src="logo.jpg" alt="">
+    <h1 style="width: 20%;">Welcome to Sikka</h1>
 
 <ul>
-    <img src="logo.jpg" alt="">
-    <div class="welcome-text">
-            <h2>Welcome to Sikka!</h2>
-        </div>
     <li><a href="contactUs.php">Contact Us</a></li>
     <li><a href="location.php">Location</a></li>
     <li><a href="gallery.php">Gallery</a></li>
     <li><a href="aboutUs.php">About Us</a></li>
     <li><a href="display.php">Home</a></li>
 </ul>
+</div>
 </nav>
+
+<div class="header-content">
+        <div class="info">
+            <p>This is a place where you can find and explore various books in our library collection. Feel free to browse and download any book you like!</p>
+            <a class="learn-more-button" href="aboutUs.php">Learn More</a>
+        </div>
+    </div>
 
     <td>
         <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>

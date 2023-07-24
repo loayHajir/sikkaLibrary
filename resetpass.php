@@ -1,3 +1,20 @@
+<?php
+include 'connect.php';
+session_start();
+
+if (isset($_POST['Submit'])) {
+    $Npass = $_POST['newPassword'];
+    $Cpass = $_POST['confirmPassword'];
+    if ($Npass == $Cpass) {
+        $query = ("update `login`set password = '$Npass'");
+        $result = mysqli_query($conn,$query);
+        echo "Data update Successfully";
+        // header('location:login.php');
+    } else {
+        echo "The password is not same";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +71,7 @@
     <label for="confirmPassword">Confirm New Password:</label>
     <input type="password" id="confirmPassword" name="confirmPassword" required>
 
-    <input type="submit" value="Reset Password">
+    <input type="submit" value="Reset Password" name="Submit">
   </form>
 </body>
 </html>

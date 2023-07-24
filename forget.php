@@ -1,10 +1,8 @@
 <?php
 include 'connect.php';
-if (isset($_POST['Submit'])) {
-$name = $_POST['username'];
-$question = $_POST['question'];
-$answer = $_POST['answer'];
+session_start();
 
+<<<<<<< HEAD
 $query = mysqli_query($conn, "SELECT * FROM login WHERE username = '$name' AND question = '$question' AND answer = '$answer'");
 $result = mysqli_num_rows($query);
 
@@ -13,6 +11,21 @@ if (!$result) {
 } else {
     header("Location: resetpass.php");
 }
+=======
+if (isset($_POST['Submit'])) {
+    $name = $_POST['username'];
+    $question = $_POST['question'];
+    $answer = $_POST['answer'];
+
+    $query = mysqli_query($conn, "select * from `login` where username = '$name' && questions = '$question' && answer = '$answer'");
+    $result = mysqli_num_rows($query);
+
+    if (!$result) {
+        echo "Username or question or answer incorrect";
+    } else {
+        header("location: resetpass.php");
+    }
+>>>>>>> 258cbfbc6c7e65c72b884fc5333e37231d2b6b82
 }
 ?>
 <!DOCTYPE html>
@@ -71,23 +84,25 @@ if (!$result) {
   </style>
 </head>
 <body>
-  <form action="#" method="post">
+  <form action="resetpass.php" method="post">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
 
-    <label for="question">Select a question:</label>
-    <select id="question" name="question" required>
+    <!-- <label for="question">Select a question:</label> -->
+    <!-- <select id="question" name="question" required>
       <option value="" disabled selected>Select a question</option>
       <option value="q1">What is your favorite color</option>
       <option value="q2">What is your favorite movie</option>
       <option value="q3">What city were you born in</option>
-      <!-- Add more options as needed -->
-    </select>
+    </select> -->
+
+    <label for="quse">question:</label>
+    <input type="text" id="question" name="question" required>
 
     <label for="answer">Answer:</label>
     <input type="text" id="answer" name="answer" required>
 
-    <input type="submit" value="Submit" formaction="resetpass.php">
+    <input type="submit" value="Submit" name="Submit" >
   </form>
 </body>
 </html>
