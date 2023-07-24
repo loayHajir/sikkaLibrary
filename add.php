@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
     } else {
         die("Error uploading the file.");
     }
-    if ($img && move_uploaded_file($_FILES["image   "]["tmp_name"], $targetFileImg)) {
+    if ($img && move_uploaded_file($_FILES["image"]["tmp_name"], $targetFileImg)) {
         $rowimg = $targetFileImg;
     } else {
         die("Error uploading the file.");

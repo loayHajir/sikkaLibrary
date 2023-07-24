@@ -84,7 +84,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
 
 <body>
 
-    <div class=" button-container">
+    <div class=" button-container">  
         <button id="add-button"><a href="add.php">Add</a></button>
         <td>
             <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>

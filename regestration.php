@@ -65,6 +65,14 @@ if (isset($_POST['Register'])) {
         border: 1px solid #ccc;
         border-radius: 4px;
     }
+    #question{
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
 
     .registration-container label {
         display: block;
@@ -125,6 +133,18 @@ if (isset($_POST['Register'])) {
             <input type="email" id="email" name="email" required>
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob" required>
+
+            <label for="question">Select a question:</label>
+      <select id="question" name="question" required>
+      <option value="" disabled selected>Select a question</option>
+      <option value="q1">What is your favorite color?</option>
+      <option value="q2">What is your favorite movie?</option>
+      <option value="q3">What city were you born in?</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <label for="answer">Answer:</label>
+    <input type="text" id="answer" name="answer" required>
             <div class="gender-container">
                 <label>Gender:</label>
                 <label for="male">Male</label>

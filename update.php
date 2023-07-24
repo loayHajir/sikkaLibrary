@@ -47,35 +47,49 @@ if (isset($_POST['update'])) {
     <h1>Update the book</h1>
     <form method="post">
         <div class="form-group">
-            <label for="bookName">Book Name:</label>
-            <input type="text" id="bookName" name="bookName" value=<?php echo $myName; ?>>
+           <label for="bookName">Book Name:</label>
+            <input type="text" id="bookName" name="bookName" required>
         </div>
-        <div class=" form-group">
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="5"><?php echo $mydes; ?></textarea>
-        </div>
-        <div class=" form-group">
+        <div class="form-group">
             <label for="language">Language:</label>
-            <select id="language" name="language">
-                <option value="<?php echo $mylang ; ?>">
-                    <?php echo $mylang; ?>
-                </option>
-                <option value=" English">English</option>
+            <select id="language" name="language" required>
+                <option value="English">English</option>
                 <option value="Arabic">Arabic</option>
                 <option value="French">French</option>
                 <option value="Spanish">Spanish</option>
             </select>
         </div>
         <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <div class="form-group">
+            <label for="pageNo">Number Of Page:</label>
+            <input type="number" id="pageNo" name="pageNO" required>
+        </div>
+        <div class="form-group">
+            <label for="dop">Date Of Publication:</label>
+            <input type="date" id="dop" name="dop" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
             <label for="availability">Availability:</label>
-            <input type="checkbox" id="availability" name="availability" <?php if ($myavai == '1')
-                echo 'checked="checked"'; ?> value="1">
+            <input type="checkbox" id="availability" name="availability" value="1">
         </div>
         <div>
-            <label for="upload">Upload:</label>
-            <input type="file" id="upload" name="upload" value="<?php
-            echo $mypdf;
-            ?>">
+            <label for="pdf">Upload:</label>
+            <input type="file" id="pdf" name="pdf">
+            <input type="file" id="image" name="image">
+        </div>
+        <br>
+           
         </div>
         <br>
         <button name=" update">Update</button>

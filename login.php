@@ -31,6 +31,7 @@ if(isset($_POST['login'])){
 }
 
 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -97,7 +98,10 @@ if(isset($_POST['login'])){
             <input type="text" id="username" name="username">
             <br>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password"> 
+
+                <p><a href="forget.php">Forgot Password?</a></p>
+
             <br>
             <div class="btn-container">
                 <input type="submit" value="Login" name="login">
@@ -107,5 +111,4 @@ if(isset($_POST['login'])){
         </form>
     </div>
 </body>
-
 </html>
