@@ -100,7 +100,7 @@ if(isset($_POST['login'])){
             <label for="password">Password:</label>
             <input type="password" id="password" name="password"> 
 
-                <p><a href="forget.php">Forgot Password?</a></p>
+                <a href="forget.php">Forgot Password?</a>
 
             <br>
             <div class="btn-container">

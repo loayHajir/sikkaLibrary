@@ -8,8 +8,11 @@ if (isset($_POST['Register'])) {
     $mail = $_POST['email'];
     $dob = $_POST['dob'];
     $gender = $_POST['gender'];
-    $Type = $_POST['Type'];
-    $sql = "insert into `login` (username,password,phoneno,email,dob,gender,Type) values('$name','$pass','$phone','$mail','$dob','$gender','Admin')";
+    
+    $question = $_POST['question'];
+    $answer = $_POST['answer'];
+
+    $sql = "insert into `login` (username,password,phoneno,email,dob,gender,questions,answer) values('$name','$pass','$phone','$mail','$dob','$gender','$question','$answer')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "data insert succssefully";
@@ -138,9 +141,9 @@ if (isset($_POST['Register'])) {
             <label for="question">Select a question:</label>
       <select id="question" name="question" required>
       <option value="" disabled selected>Select a question</option>
-      <option value="q1">What is your favorite color?</option>
-      <option value="q2">What is your favorite movie?</option>
-      <option value="q3">What city were you born in?</option>
+      <option value="What is your favorite color">What is your favorite color</option>
+      <option value="What is your favorite movie">What is your favorite movie</option>
+      <option value="What city were you born in">What city were you born in</option>
       <!-- Add more options as needed -->
     </select>
 
