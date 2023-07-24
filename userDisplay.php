@@ -6,8 +6,10 @@ include "connect.php";
 
 <head>
     <title>Book Table</title>
+
     <style>
-    CSS styling for the table button {
+    /* // CSS styling for the  */
+    table button {
         padding: 0.5rem 1rem;
         background-color: #4CAF50;
         color: white;
@@ -70,6 +72,7 @@ include "connect.php";
 </head>
 
 <body>
+
     <td>
         <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
     </td>
