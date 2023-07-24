@@ -15,9 +15,12 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
 <head>
     <title>Book Table</title>
     <style>
-    /* CSS styling for the table */
-    .btn,
-    button {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .btn {
         padding: 0.5rem 1rem;
         background-color: #4CAF50;
         color: white;
@@ -32,6 +35,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
     table {
         width: 100%;
         border-collapse: collapse;
+        margin-top: 20px;
     }
 
     th,
@@ -56,6 +60,9 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+        right: 150px;
     }
 
     a {
@@ -79,16 +86,58 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         bottom: 20px;
         right: 50px;
     }
+
+    ul {
+
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        margin: 10px 30px 0 0;
+        float: right;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #111;
+    }
+
+    img {
+        margin: 5px 0 0 30px;
+        width: 7%;
+        height: 55px;
+        border-radius: 100px;
+    }
     </style>
 </head>
 
 <body>
 
-    <div class=" button-container">  
+    <nav>
+
+        <ul>
+            <img src="logo.jpg" alt="">
+            <li><a href="contactUs.php">Contact Us</a></li>
+            <li><a href="location.php">Location</a></li>
+            <li><a href="gallery.php">Gallery</a></li>
+            <li><a href="aboutUs.php">About Us</a></li>
+            <li><a href="display.php">Home</a></li>
+        </ul>
+    </nav>
+    <div class="button-container">
         <button id="add-button"><a href="add.php">Add</a></button>
-        <td>
-            <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
-        </td>
+        <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
     </div>
     <table>
         <thead>

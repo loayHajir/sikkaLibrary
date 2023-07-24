@@ -25,6 +25,7 @@ if (isset($_POST['Register'])) {
 
 <head>
     <title>Registration Form</title>
+    <link rel="stylesheet" href="../SikkaLibrary/style.css">
     <style>
     body {
         font-family: Arial, sans-serif;
