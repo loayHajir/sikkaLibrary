@@ -1,19 +1,18 @@
 <?php
 include 'connect.php';
+if (isset($_POST['Submit'])) {
 $name = $_POST['username'];
-$qus = $_POST['question'];
-$answ = $_POST['answer'];
-$qry = "select username,questions,answer from login";
-$result = mysqli_query($conn,$qry);
-while ($row = mysqli_fetch_assoc($result)) {
-$myName = $row['username'];
-$myQus = $row['questions'];
-$myAnsw = $row['answer'];
-}
-if ($name != $myName && $qus != $myQus && $answ != $myAnsw) {
+$question = $_POST['question'];
+$answer = $_POST['answer'];
+
+$query = mysqli_query($conn, "select * from login where username = '$name' && questions = '$question' && answer =$'$answer'");
+$result = mysqli_num_rows($query);
+$row = mysqli_fetch_array($query);
+if (!$resutl) {
     echo "username or question or answer incorrect";
 } else {
     header("Location: resetpass.php");
+}
 }
 ?>
 <!DOCTYPE html>
