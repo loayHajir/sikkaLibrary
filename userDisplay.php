@@ -73,6 +73,22 @@ include "connect.php";
 
 <body>
 
+
+<nav>
+
+<ul>
+    <img src="logo.jpg" alt="">
+    <div class="welcome-text">
+            <h2>Welcome to Sikka!</h2>
+        </div>
+    <li><a href="contactUs.php">Contact Us</a></li>
+    <li><a href="location.php">Location</a></li>
+    <li><a href="gallery.php">Gallery</a></li>
+    <li><a href="aboutUs.php">About Us</a></li>
+    <li><a href="display.php">Home</a></li>
+</ul>
+</nav>
+
     <td>
         <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
     </td>

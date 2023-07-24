@@ -5,10 +5,10 @@ $name = $_POST['username'];
 $question = $_POST['question'];
 $answer = $_POST['answer'];
 
-$query = mysqli_query($conn, "select * from login where username = '$name' && questions = '$question' && answer =$'$answer'");
+$query = mysqli_query($conn, "SELECT * FROM login WHERE username = '$name' AND question = '$question' AND answer = '$answer'");
 $result = mysqli_num_rows($query);
-$row = mysqli_fetch_array($query);
-if (!$resutl) {
+
+if (!$result) {
     echo "username or question or answer incorrect";
 } else {
     header("Location: resetpass.php");
