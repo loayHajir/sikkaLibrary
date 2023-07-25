@@ -62,17 +62,6 @@ include "connect.php";
         text-decoration: underline;
     }
 
-    #logout {
-        padding: 0.5rem 1rem;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        position: absolute;
-        bottom: 20px;
-        right: 50px;
-    }
     ul,.lgo {
 list-style-type: none;
 margin: 0;
@@ -107,6 +96,7 @@ width: 7%;
 height: 55px;
 border-radius: 100px;
 }
+
 .lgo{
     display : flex;
 }
@@ -118,31 +108,41 @@ h1{
     font-size: 25px;
     
 }
+.div.info{
+  border: 5px solid;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+
+}
+
 .header-content {
         display: flex;
-        justify-content: space-between;
-        text-align: center;
-        padding:100px;
-        background-image: url('library.jpg'); /* Replace 'header_image.jpg' with the actual path to your image */
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+        background-image: url('library.jpg');
         background-size: cover;
         color: white;
         font-family: Arial, Helvetica, sans-serif;
+        margin: auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .header-content .info {
         max-width: 70%;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 50px;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 100px;
         font-size:25px;
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
         grid-area: text;
-        margin: 25px;     
+        margin: 25px;    
+        
     }
 
     .header-content p {
         margin-top:20px;
-        margin-bottom: 10px;
         margin-right:20px;
         font-size:30x;
         font-family: "Times New Roman";
@@ -169,8 +169,8 @@ h1{
     <h1 style="width: 20%;">Welcome to Sikka</h1>
 
 <ul>
+    <li><a href="logout.php">Logout</a></li>
     <li><a href="contactUs.php">Contact Us</a></li>
-    <li><a href="location.php">Location</a></li>
     <li><a href="gallery.php">Gallery</a></li>
     <li><a href="aboutUs.php">About Us</a></li>
     <li><a href="display.php">Home</a></li>
@@ -185,9 +185,6 @@ h1{
         </div>
     </div>
 
-    <td>
-        <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
-    </td>
     <table>
         <thead>
             <tr>
