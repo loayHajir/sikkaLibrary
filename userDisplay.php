@@ -5,7 +5,7 @@ include "connect.php";
 <html>
 
 <head>
-    <title>Book Table</title>
+    <title></title>
 
     <style>
     /* // CSS styling for the  */
@@ -68,7 +68,7 @@ margin: 0;
 padding: 0;
 overflow: hidden;
 width:100%;
-background-color: #333;
+background-color: #A0522D;
 font-family: "Times New Roman";
 font-size: 15px;
 }
