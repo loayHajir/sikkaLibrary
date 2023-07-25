@@ -114,40 +114,50 @@ border-radius: 100px;
 h1{
     margin-left: 40px;
     color: white;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Times New Roman";
     font-size: 25px;
     
 }
 .header-content {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding:250px;
+        text-align: center;
+        padding:100px;
         background-image: url('library.jpg'); /* Replace 'header_image.jpg' with the actual path to your image */
         background-size: cover;
         color: white;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .header-content .info {
         max-width: 70%;
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 100px;
-        font-size:30x;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 50px;
+        font-size:25px;
         text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        grid-area: text;
+        margin: 25px;     
     }
 
     .header-content p {
+        margin-top:20px;
         margin-bottom: 10px;
+        margin-right:20px;
+        font-size:30x;
+        font-family: "Times New Roman";
     }
 
     .learn-more-button {
-        background-color: #4CAF50;
+        background-color: #A0522D;
         color: white;
         padding: 10px 20px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        font-size:20px;
     }
+    
 </style>
 </head>
 
@@ -170,8 +180,8 @@ h1{
 
 <div class="header-content">
         <div class="info">
-            <p>This is a place where you can find and explore various books in our library collection. Feel free to browse and download any book you like!</p>
-            <a class="learn-more-button" href="aboutUs.php">Learn More</a>
+           <p>This is a place where you can find and explore various books in our library collection. Feel free to browse and download any book you like!</p>
+           <a class="learn-more-button" href="aboutUs.php">Learn More</a>
         </div>
     </div>
 
