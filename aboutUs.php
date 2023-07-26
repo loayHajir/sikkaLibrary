@@ -131,7 +131,6 @@ h1{
             border-radius: 8px;
             background-color: #f9f9f9;
             background-color: rgba(0, 0, 0, 0.6);
-            f
         }
 
         .team-members {
@@ -142,7 +141,7 @@ h1{
         }
 
         .team-member {
-            background-color: #f2f2f2; /* Replace with your desired color */
+            background-color: #DEB887;
             padding: 30px;
             margin: 20px auto;
             max-width: 800px;
@@ -186,14 +185,29 @@ h1{
     <!-- Team Members Section -->
     <div class="team-members">
         <div class="team-member">
-            <h3>Team Member 1</h3>
-            <p>Write some information about the first team member here.</p>
+            <h3>Layal Khatib</h3>
+            <p> Role = ( Project Manager )</p>
+            <br>Mail-ID : layalkhatib@gmail.com<br/>
         </div>
         <div class="team-member">
-            <h3>Team Member 2</h3>
-            <p>Write some information about the second team member here.</p>
+            <h3>Dana Allouche</h3>
+            <p> Role = ( Full Stack Developer )</p>
+            <br>Mail-ID : dana@gmail.com<br/>
         </div>
-        <!-- Add more team members as needed -->
+
+        <div class="team-member">
+            <h3>Loay Hajir</h3>
+            <p> Role = ( Full Stack Developer )</p>
+            <br>Mail-ID : loay@gmail.com<br/>
+        </div>
+
+        <div class="team-member">
+            <h3>Zeinab Miari</h3>
+            <p> Role = ( Full Stack Developer )</p>
+            <br>Mail-ID : zeina6@gmail.com<br/>
+        </div>
+    
+    
     </div>
 
     <!-- Thank You Section -->
