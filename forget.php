@@ -2,7 +2,7 @@
 include 'connect.php';
 session_start();
 
-if (isset($_POST['Submit'])) {
+if (isset($_POST['submit'])) {
     $name = $_POST['username'];
     $question = $_POST['question'];
     $answer = $_POST['answer'];

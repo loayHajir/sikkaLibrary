@@ -86,6 +86,13 @@ if(isset($_POST['login'])){
 
     .login-container .btn-container input[type="submit"]:hover {
         background-color: #45a049;
+    } 
+    .pass-icon{
+        position: absolute;
+        width:25px;
+        cursor:pointer;
+        top:350px;
+        margin-left:180px;
     }
     </style>
 </head>
@@ -99,6 +106,7 @@ if(isset($_POST['login'])){
             <br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password"> 
+            <img src="1159224-200.png" onclick="pass()" class="pass-icon" id="pass-icon">
 
                 <a href="forget.php">Forgot Password?</a>
 
@@ -110,5 +118,21 @@ if(isset($_POST['login'])){
             </div>
         </form>
     </div>
+
+    <script>
+        var a ;
+        function pass() {
+            if (a==1) {
+           document.getElementById('password').type='password';
+           document.getElementById('pass-icon').src='1159224-200.png';
+           a=0;
+            }
+            else {
+            document.getElementById('password').type='text';
+           document.getElementById('pass-icon').src='download.png';
+           a=1;
+            }
+        }
+    </script>
 </body>
 </html>
