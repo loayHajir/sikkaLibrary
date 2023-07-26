@@ -23,7 +23,7 @@ if(isset($_POST['login'])){
         if ( $_SESSION['Type'] == "Admin") {
             header("location:display.php");
         } else {
-            header("location:userDisplay.php");
+            header("location:Home.php");
 
         }
 
