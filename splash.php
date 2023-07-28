@@ -13,23 +13,27 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            background-image: url('library.jpg');
         }
 
         .splash-content {
             text-align: center;
+            color: #FFDEAD;
         }
 
         .logo {
             width: 150px;
             height: 150px;
+            color: #FFDEAD;
         }
+      
     </style>
 </head>
 <body>
     <!-- Your splash page content goes here -->
     <div class="splash-content">
         <h1>Welcome to Sikka library!</h1>
-        <img src="education-logo-open-book-dictionary-textbook-or-notebook-with-sunrice-icon-modern-emblem-idea-concept-design-for-business-libraries-schools-universities-educational-courses-vector.jpg" alt="Logo" class="logo">
+        <img src="96606910-library-logo-with-building-and-books (1).webp" alt="Logo" class="logo">
         <p>Loading...</p>
 
       

@@ -34,7 +34,106 @@ if (isset($_POST['Register'])) {
         font-family: Arial, sans-serif;
         background-color: #f2f2f2;
         text-align: center;
+        background-image: url('library.jpg');
     }
+
+    .registration-container {
+        width: 300px;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 20px;
+        color: #FFDEAD;
+    }
+
+    .registration-container h2 {
+        margin-bottom: 20px;
+    }
+
+    .registration-container input[type="text"],
+    .registration-container input[type="password"],
+    .registration-container input[type="date"] {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .registration-container input[type="email"],
+    .registration-container input[type="tel"] {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #FFDEAD;
+    }
+    #question{
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #FFDEAD;
+    }
+
+    .registration-container label {
+        display: block;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+
+    .registration-container .gender-container {
+        text-align: left;
+    }
+
+    .registration-container .gender-container label {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .registration-container input[type="submit"] {
+        width: 48%;
+        background-color: #A0522D;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .registration-container input[type="submit"]:hover {
+        background-color: #A0522D;
+    }
+     #back{
+        width: 48%;
+        background-color: #A0522D;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        
+    }
+      
+    #back a {
+        color: white;
+        text-decoration: none;
+    }
+    #answer,#dob,#username,#password{
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #FFDEAD;
+    }
+ 
     </style>
 </head>
 
