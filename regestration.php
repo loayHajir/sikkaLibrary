@@ -35,91 +35,6 @@ if (isset($_POST['Register'])) {
         background-color: #f2f2f2;
         text-align: center;
     }
-
-    .registration-container {
-        margin: 50px auto;
-        width: 400px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .registration-container h2 {
-        margin-bottom: 20px;
-    }
-
-    .registration-container input[type="text"],
-    .registration-container input[type="password"],
-    .registration-container input[type="date"] {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    .registration-container input[type="email"],
-    .registration-container input[type="tel"] {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    #question{
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    .registration-container label {
-        display: block;
-        margin-bottom: 5px;
-        text-align: left;
-    }
-
-    .registration-container .gender-container {
-        text-align: left;
-    }
-
-    .registration-container .gender-container label {
-        display: inline-block;
-        margin-right: 10px;
-    }
-
-    .registration-container input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 14px 20px;
-        margin-top: 10px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .registration-container input[type="submit"]:hover {
-        background-color: #45a049;
-    }
-     #back{
-        background-color: #4CAF50;
-        color: white;
-        padding: 14px 20px;
-        margin-top: 10px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        
-    }
-    #back a {
-        color: white;
-        text-decoration: none;
-    }
     </style>
 </head>
 
@@ -130,25 +45,25 @@ if (isset($_POST['Register'])) {
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" onblur="chkPassword()">
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone" onblur="checkNum()">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob" required>
+            <input type="date" id="dob" name="dob" onblur="age()" required>
 
             <label for="question">Select a question:</label>
-      <select id="question" name="question" required>
-      <option value="" disabled selected>Select a question</option>
-      <option value="What is your favorite color">What is your favorite color</option>
-      <option value="What is your favorite movie">What is your favorite movie</option>
-      <option value="What city were you born in">What city were you born in</option>
-      <!-- Add more options as needed -->
-    </select>
+            <select id="question" name="question" required>
+                <option value="" disabled selected>Select a question</option>
+                <option value="What is your favorite color">What is your favorite color</option>
+                <option value="What is your favorite movie">What is your favorite movie</option>
+                <option value="What city were you born in">What city were you born in</option>
+                <!-- Add more options as needed -->
+            </select>
 
-    <label for="answer">Answer:</label>
-    <input type="text" id="answer" name="answer" required>
+            <label for="answer">Answer:</label>
+            <input type="text" id="answer" name="answer" required>
             <div class="gender-container">
                 <label>Gender:</label>
                 <label for="male">Male</label>
@@ -164,3 +79,41 @@ if (isset($_POST['Register'])) {
 </body>
 
 </html>
+
+<script>
+var pass = document.getElementById("password");
+
+function chkPassword() {
+    if (pass.value.length < 6) {
+        alert("To be secure! pleaase enter at least 6 chracters");
+        pass.focus();
+        return false;
+    }
+}
+var numInput = document.getElementById("phone");
+
+function checkNum() {
+    if (isNaN(numInput.value)) {
+        alert("numeric input only");
+        numInput.focus();
+        return false;
+    }
+    if (numInput.value.length < 8 || numInput.value.length > 8) {
+        alert("Please enter 8 number")
+        numInput.focus();
+        return false;
+    }
+}
+
+function age() {
+    var dateField = document.getElementById("dob").value;
+    var inputDate = new Date(dateField);
+    var currentDate = new Date();
+    var age = currentDate.getFullYear() - inputDate.getFullYear();
+    if (inputDate > currentDate) {
+        alert("Invalid Date, Please Enter a valid date");
+        dobb.focus();
+        return false;
+    }
+}
+</script>
