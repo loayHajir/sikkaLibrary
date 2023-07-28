@@ -34,15 +34,18 @@ if (isset($_POST['Register'])) {
         font-family: Arial, sans-serif;
         background-color: #f2f2f2;
         text-align: center;
+        background-image: url('library.jpg');
     }
 
     .registration-container {
-        margin: 50px auto;
-        width: 400px;
+        width: 300px;
         padding: 20px;
-        border: 1px solid #ccc;
-        background-color: #fff;
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 20px;
+        color: #FFDEAD;
     }
 
     .registration-container h2 {
@@ -68,6 +71,7 @@ if (isset($_POST['Register'])) {
         box-sizing: border-box;
         border: 1px solid #ccc;
         border-radius: 4px;
+        background-color: #FFDEAD;
     }
     #question{
         width: 100%;
@@ -76,6 +80,7 @@ if (isset($_POST['Register'])) {
         box-sizing: border-box;
         border: 1px solid #ccc;
         border-radius: 4px;
+        background-color: #FFDEAD;
     }
 
     .registration-container label {
@@ -94,32 +99,41 @@ if (isset($_POST['Register'])) {
     }
 
     .registration-container input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
+        width: 48%;
+        background-color: #A0522D;
         padding: 14px 20px;
-        margin-top: 10px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
     }
 
     .registration-container input[type="submit"]:hover {
-        background-color: #45a049;
+        background-color: #A0522D;
     }
      #back{
-        background-color: #4CAF50;
-        color: white;
+        width: 48%;
+        background-color: #A0522D;
         padding: 14px 20px;
-        margin-top: 10px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         
     }
+      
     #back a {
         color: white;
         text-decoration: none;
     }
+    #answer,#dob,#username,#password{
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #FFDEAD;
+    }
+ 
     </style>
 </head>
 
