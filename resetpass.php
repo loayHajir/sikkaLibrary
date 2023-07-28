@@ -2,12 +2,19 @@
 include 'connect.php';
 session_start();
 
-if (isset($_POST['Submit'])) {
+if (!isset($_SESSION['user_id'])) {
+  // If the user is not logged in or doesn't have the required session data, redirect to the forget password page
+  $_SESSION['resetpass_error'] = "Please enter correct information to reset your password.";
+  header('Location: forget.php');
+  exit();
+}
+
+if (isset($_POST['submit'])) {
     $Npass = $_POST['newPassword'];
     $Cpass = $_POST['confirmPassword'];
 
     if ($Npass === $Cpass) {
-        $user_id = $_SESSION['user_id']; // Replace 'user_id' with the appropriate session variable holding the user ID or username
+        $user_id = $_SESSION['user_id'];
         $query = "UPDATE `login` SET password = '$Npass' WHERE user_id = '$user_id'";
         $result = mysqli_query($conn, $query);
 
@@ -20,7 +27,10 @@ if (isset($_POST['Submit'])) {
             echo "Error updating password";
         }
     } else {
-        echo "The passwords do not match";
+        // Passwords do not match, redirect back to forget password page with an error message
+        $_SESSION['resetpass_error'] = "The passwords do not match. Please try again.";
+        header('Location: forgetpassword.php');
+        exit();
     }
 }
 ?>
