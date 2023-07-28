@@ -38,7 +38,7 @@ if (isset($_POST['Register'])) {
     }
 
     .registration-container {
-        width: 300px;
+        width: 400px;
         padding: 20px;
         border-radius: 8px;
         background-color: rgba(0, 0, 0, 0.1);
