@@ -91,7 +91,6 @@ if(isset($_POST['login'])){
     .login-container .btn-container input[type="submit"] {
         width: 48%;
         background-color: #A0522D;
-        color:#FFDEAD;
         padding: 14px 20px;
         border: none;
         border-radius: 4px;
@@ -100,7 +99,6 @@ if(isset($_POST['login'])){
     }
 
     .login-container .btn-container input[type="submit"]:hover {
-<<<<<<< HEAD
         background-color: #FFDEAD;
     }
 
@@ -112,16 +110,6 @@ if(isset($_POST['login'])){
 
     .login-container a:hover {
         color: #666;
-=======
-        background-color: #45a049;
-    } 
-    .pass-icon{
-        position: absolute;
-        width:25px;
-        cursor:pointer;
-        top:350px;
-        margin-left:180px;
->>>>>>> 28602f94837249da1f08eb2eae130e63dba72f20
     }
     </style>
 </head>
@@ -134,16 +122,8 @@ if(isset($_POST['login'])){
             <input type="text" id="username" name="username">
             <br>
             <label for="password">Password:</label>
-<<<<<<< HEAD
             <input type="password" id="password" name="password">
             <a href="forget.php">Forgot Password?</a>
-=======
-            <input type="password" id="password" name="password"> 
-            <img src="1159224-200.png" onclick="pass()" class="pass-icon" id="pass-icon">
-
-                <a href="forget.php">Forgot Password?</a>
-
->>>>>>> 28602f94837249da1f08eb2eae130e63dba72f20
             <br>
             <div class="btn-container">
                 <input type="submit" value="Login" name="login">
