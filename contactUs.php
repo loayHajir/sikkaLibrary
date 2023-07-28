@@ -109,7 +109,8 @@ h1{
     font-weight: bold;
 }
 
-        section {
+ 
+section {
             text-align: center;
             background-size: cover;
             padding: 100px 0;

@@ -37,21 +37,32 @@ if(isset($_POST['login'])){
 <html>
 
 <head>
-    <title>Login </title>
+    <title>Login</title>
     <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        text-align: center;
+        background-image: url('library.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .login-container {
-        margin: 150px auto;
         width: 300px;
         padding: 20px;
-        border: 1px solid #ccc;
-        background-color: #fff;
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 20px;
+        color: #FFDEAD;
+        
     }
 
     .login-container h2 {
@@ -66,26 +77,40 @@ if(isset($_POST['login'])){
         box-sizing: border-box;
         border: 1px solid #ccc;
         border-radius: 4px;
-    }
-
+        background-color: #FFDEAD;;
+    
+       
+    } 
     .login-container .btn-container {
         display: flex;
         justify-content: space-between;
+        margin-top: 10px;
+        
     }
 
     .login-container .btn-container input[type="submit"] {
         width: 48%;
-        background-color: #4CAF50;
-        color: white;
+        background-color: #A0522D;
+        color:#FFDEAD;
         padding: 14px 20px;
-        margin-top: 10px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+    
     }
 
     .login-container .btn-container input[type="submit"]:hover {
-        background-color: #45a049;
+        background-color: #FFDEAD;
+    }
+
+    .login-container a {
+        color: #FFDEAD;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .login-container a:hover {
+        color: #666;
     }
     </style>
 </head>
@@ -98,17 +123,16 @@ if(isset($_POST['login'])){
             <input type="text" id="username" name="username">
             <br>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password"> 
-
-                <a href="forget.php">Forgot Password?</a>
-
+            <input type="password" id="password" name="password">
+            <a href="forget.php">Forgot Password?</a>
             <br>
             <div class="btn-container">
                 <input type="submit" value="Login" name="login">
                 <input type="submit" value="Registration" formaction="regestration.php">
-
             </div>
         </form>
     </div>
 </body>
+
 </html>
+
