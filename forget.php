@@ -1,97 +1,99 @@
-<?php
-include 'connect.php';
-session_start();
-
-if (isset($_POST['submit'])) {
-    $name = $_POST['username'];
-    $question = $_POST['question'];
-    $answer = $_POST['answer'];
-
-    $query = mysqli_query($conn, "select * from `login` where username = '$name' && questions = '$question' && answer = '$answer'");
-    $result = mysqli_num_rows($query);
-
-    if (!$result) {
-        echo "Username or question or answer incorrect";
-    } else {
-        header("location: resetpass.php");
-    }
-}
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forgot Password</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      padding: 20px;
-    }
+    <title>Forgot Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('library.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+        .forget-container {
+            width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            color: #FFDEAD;
+        }
 
-    label, select {
-      display: block;
-      margin-bottom: 10px;
-    }
+        .forget-container h2 {
+            margin-bottom: 20px;
+        }
 
-    select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+        .forget-container input[type="text"],
+        .forget-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #FFDEAD;
+            color: #000; /* Text color on input fields */
+        }
 
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+        .forget-container .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
 
-    input[type="submit"] {
-      background-color: #007BFF;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+        .forget-container .btn-container input[type="submit"] {
+            width: 48%;
+            background-color: #A0522D;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #FFF; /* Text color on buttons */
+        }
 
-    input[type="submit"]:hover {
-      background-color: #0056b3;
-    }
-  </style>
+        .forget-container .btn-container input[type="submit"]:hover {
+            background-color: #FFDEAD;
+            color: #000; /* Text color on buttons when hovering */
+        }
+
+        .forget-container a {
+            color: #FFDEAD;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forget-container a:hover {
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-  <form action="resetpass.php" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+    <div class="forget-container">
+        <form action="resetpass.php" method="post">
+            <h2>Forgot Password</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-    <!-- <label for="question">Select a question:</label> -->
-    <!-- <select id="question" name="question" required>
-      <option value="" disabled selected>Select a question</option>
-      <option value="q1">What is your favorite color</option>
-      <option value="q2">What is your favorite movie</option>
-      <option value="q3">What city were you born in</option>
-    </select> -->
+            <label for="question">Security Question:</label>
+            <input type="text" id="question" name="question" required>
 
-    <label for="quse">question:</label>
-    <input type="text" id="question" name="question" required>
+            <label for="answer">Answer:</label>
+            <input type="text" id="answer" name="answer" required>
 
-    <label for="answer">Answer:</label>
-    <input type="text" id="answer" name="answer" required>
-
-    <input type="submit" value="Submit" name="Submit" >
-  </form>
+            <div class="btn-container">
+                <input type="submit" value="Submit" name="submit">
+                <a href="login.php">Back to Login</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

@@ -90,16 +90,17 @@ if(isset($_POST['login'])){
 
     .login-container .btn-container input[type="submit"] {
         width: 48%;
-        background-color: #A0522D;
-        padding: 14px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    
+            background-color: #A0522D;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #FFF;
     }
 
     .login-container .btn-container input[type="submit"]:hover {
         background-color: #FFDEAD;
+            color: #000; /* Text color on buttons when hovering */
     }
 
     .login-container a {
@@ -108,9 +109,7 @@ if(isset($_POST['login'])){
         font-size: 14px;
     }
 
-    .login-container a:hover {
-        color: #666;
-    }
+
     </style>
 </head>
 
