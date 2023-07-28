@@ -1,3 +1,22 @@
+<?php
+include 'connect.php';
+session_start();
+
+if (isset($_POST['submit'])) {
+    $name = $_POST['username'];
+    $question = $_POST['question'];
+    $answer = $_POST['answer'];
+
+    $query = mysqli_query($conn, "select * from `login` where username = '$name' && questions = '$question' && answer = '$answer'");
+    $result = mysqli_num_rows($query);
+
+    if (!$result) {
+        echo "Username or question or answer incorrect";
+    } else {
+        header("location: resetpass.php");
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
