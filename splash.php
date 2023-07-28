@@ -26,7 +26,6 @@
             height: 150px;
             color: #FFDEAD;
         }
-      
     </style>
 </head>
 <body>

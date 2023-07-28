@@ -18,11 +18,12 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
     body {
         padding: 0;
         margin: 0;
+        background-image: url('library.jpg');
     }
 
     .btn {
         padding: 0.5rem 1rem;
-        background-color: #4CAF50;
+        background-color: #A0522D;
         color: white;
         border: none;
         border-radius: 4px;
@@ -43,10 +44,11 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         padding: 8px;
         text-align: left;
         border-bottom: 1px solid #ddd;
+        color:white;
     }
 
     th {
-        background-color: #f2f2f2;
+        background-color:#A0522D;
     }
 
     .button-container {
@@ -55,7 +57,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
 
     .button-container button {
         padding: 0.5rem 1rem;
-        background-color: #4CAF50;
+        background-color: #A0522D;
         color: white;
         border: none;
         border-radius: 4px;
@@ -77,7 +79,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
 
     #logout {
         padding: 0.5rem 1rem;
-        background-color: #4CAF50;
+        background-color:#A0522D;
         color: white;
         border: none;
         border-radius: 4px;
@@ -85,6 +87,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         position: absolute;
         bottom: 20px;
         right: 50px;
+        
     }
 
     ul {
@@ -93,7 +96,8 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #333;
+        background-color: #A0522D;
+
     }
 
     li {
@@ -127,7 +131,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
     <nav>
 
         <ul>
-            <img src="logo.jpg" alt="">
+            <img src="96606910-library-logo-with-building-and-books (1).webp" alt="">
             <li><a href="contactUs.php">Contact Us</a></li>
             <li><a href="location.php">Location</a></li>
             <li><a href="gallery.php">Gallery</a></li>
