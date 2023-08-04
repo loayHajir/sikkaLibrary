@@ -19,6 +19,7 @@ if(isset($_POST['login'])){
     } else {
         
         $_SESSION['Type'] = $row['Type'];
+        $_SESSION['user_id'] = $row['ID'];
         
         if ( $_SESSION['Type'] == "Admin") {
             header("location:display.php");

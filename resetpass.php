@@ -15,12 +15,13 @@ if (isset($_POST['submit'])) {
 
     if ($Npass === $Cpass) {
         $user_id = $_SESSION['user_id'];
-        $query = "UPDATE `login` SET password = '$Npass' WHERE user_id = '$user_id'";
+        $query = "UPDATE `login` SET password = '$Npass' WHERE ID = '$user_id'";
         $result = mysqli_query($conn, $query);
 
         if ($result) {
             echo "Password updated successfully";
-            // Redirect to the login page after successful password update
+            // Redirect to the login page after successful password update  
+              
             header('Location: login.php');
             exit();
         } else {

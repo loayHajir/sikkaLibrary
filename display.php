@@ -186,7 +186,6 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         </tbody>
     </table>
 </body>
-
 </html>
 <script>
 function msg() {
