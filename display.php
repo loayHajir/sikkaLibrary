@@ -131,7 +131,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
     <nav>
 
         <ul>
-            <img src="96606910-library-logo-with-building-and-books (1).webp" alt="">
+            <img src="logo.jpg" alt="">
             <li><a href="contactUs.php">Contact Us</a></li>
             <li><a href="location.php">Location</a></li>
             <li><a href="gallery.php">Gallery</a></li>
