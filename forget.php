@@ -10,11 +10,10 @@ if (isset($_POST['submit'])) {
     $query = mysqli_query($conn, "SELECT * FROM `login` WHERE username = '$name' AND questions = '$question' AND answer = '$answer'");
     $result = mysqli_num_rows($query);
 
-    if ($result > 0) {
-        // Username, question, and answer are correct, store user ID in the session
-        $user_data = mysqli_fetch_assoc($query);
-        $_SESSION['user_id'] = $user_data['user_id'];
-        header("location: resetpass.php");
+    if (!$result) {
+        echo "incorrect name or password or answer";
+    } else {
+      header("location: resetpass.php");
         exit();
     } else {
         $_SESSION['resetpass_error'];
