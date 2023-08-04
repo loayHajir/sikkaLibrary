@@ -1,12 +1,32 @@
-
 <?php
 include "connect.php";
+// Start the session
+session_start();
+
+// Check if the user is logged in or not
+$isLoggedIn = isset($_SESSION['user_id']);
+// Logout functionality
+if (isset($_GET['logout'])) {
+    // Clear the session data and destroy the session
+    session_unset();
+    session_destroy();
+    // Redirect to the home page after logout
+    header('Location: logout.php');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <title></title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<?php include 'templates/header.php';?>
 
     <style>
     /* // CSS styling for the  */
@@ -14,101 +34,7 @@ include "connect.php";
         padding: 0;
         margin: 0;
     }
-    table button {
-        padding: 0.5rem 1rem;
-        background-color: #A0522D;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
-
-    th,
-    td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-
-    th {
-        background-color: #A0522D;
-    }
-
-    .button-container {
-        text-align: left;
-    }
-
-    .button-container button {
-        padding: 0.5rem 1rem;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
-
-    #down {
-        color: blue;
-        text-decoration: underline;
-    }
-
-    ul,.lgo {
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
-width:100%;
-background-color: #A0522D;
-font-family: "Times New Roman";
-font-size: 15px;
-}
-
-li {
-margin: 10px 30px 0 0;
-float: right;
-}
-
-li a {
-display: block;
-color: white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-}
-
-li a:hover:not(.active) {
-background-color: #111;
-}
-
-img {
-margin: 5px 0 0 30px;
-width: 7%;
-height: 55px;
-border-radius: 100px;
-}
-
-.lgo{
-    display : flex;
-}
-
-h1{
-    margin-left: 40px;
-    color: white;
-    font-family: "Times New Roman";
-    font-size: 25px;
-    font-weight: bold;
-}
+    
         .header {
             text-align: center;
             background-image: url('library.jpg');
@@ -159,20 +85,6 @@ h1{
 
 <body>
 
-<nav>
-<div class="lgo">
-    <img src="logo.jpg" alt="">
-    <h1 style="width: 20%;">Welcome to Sikka</h1>
-
-<ul>
-    <li><a href="logout.php">Logout</a></li>
-    <li><a href="contactUs.php">Contact Us</a></li>
-    <li><a href="gallery.php">Gallery</a></li>
-    <li><a href="aboutUs.php">About Us</a></li>
-    <li><a href="Home.php">Home</a></li>
-</ul>
-</div>
-</nav>
 
     <!-- About Us Section -->
     <div class="header">

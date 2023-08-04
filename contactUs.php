@@ -6,6 +6,16 @@ include "connect.php";
 
 <head>
     <title></title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<?php include 'templates/header.php';?>
+
+<head>
+    <title></title>
 
     <style>
     body {
@@ -25,6 +35,7 @@ include "connect.php";
         top: 50%;
         width: 400px;
         padding: 20px;
+
         border-radius: 8px;
         background-color: rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
@@ -114,46 +125,7 @@ include "connect.php";
         text-decoration: underline;
     }
 
-    ul,.lgo {
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
-width:100%;
-background-color: #A0522D;
-font-family: "Times New Roman";
-font-size: 15px;
-}
-
-
-li {
-margin: 10px 30px 0 0;
-float: right;
-}
-
-li a {
-display: block;
-color: white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-}
-
-li a:hover:not(.active) {
-background-color: #111;
-}
-
-img {
-margin: 5px 0 0 30px;
-width: 7%;
-height: 55px;
-border-radius: 100px;
-}
-
-.lgo{
-    display : flex;
-}
-
+    
 h1{
     margin-left: 40px;
     color: white;
@@ -174,20 +146,6 @@ h1{
 
 <body>
 
-    <nav>
-<div class="lgo">
-    <img src="logo.jpg" alt="">
-    <h1 style="width: 20%;">Welcome to Sikka</h1>
-
-<ul>
-    <li><a href="logout.php">Logout</a></li>
-    <li><a href="contactUs.php">Contact Us</a></li>
-    <li><a href="gallery.php">Gallery</a></li>
-    <li><a href="aboutUs.php">About Us</a></li>
-    <li><a href="Home.php">Home</a></li>
-</ul>
-</div>
-</nav>
 
 <div class="header">
         <h2>Contact Us</h2>
