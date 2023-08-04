@@ -9,11 +9,11 @@ if (isset($_POST['submit'])) {
 
     $query = mysqli_query($conn, "SELECT * FROM `login` WHERE username = '$name' AND questions = '$question' AND answer = '$answer'");
     $result = mysqli_num_rows($query);
-
+    // var_dump($result);
     if ($result > 0) {
         // Username, question, and answer are correct, store user ID in the session
         $user_data = mysqli_fetch_assoc($query);
-        $_SESSION['user_id'] = $user_data['user_id'];
+        $_SESSION['user_id'] = $user_data['ID'];
         header("location: resetpass.php");
         exit();
     } else {
@@ -102,7 +102,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     <div class="forget-container">
-        <form action="resetpass.php" method="post">
+        <form action="forget.php" method="post">
             <h2>Forgot Password</h2>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
