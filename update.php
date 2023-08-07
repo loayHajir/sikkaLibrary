@@ -19,6 +19,10 @@ $mydes = $myRow['Description'];
 $mylang = $myRow['Language'];
 $myavai = $myRow['Available'];
 $mypdf = $myRow['PDF'];
+$mytitle = $myRow['title'];
+$myauthor = $myRow['author'];
+$mydop = $myRow['dop'];
+$myno = $myRow['pageNum'];
 if (isset($_POST['update'])) {
     $bookName = $_POST['bookName'];
     $des = $_POST['description'];
@@ -48,11 +52,12 @@ if (isset($_POST['update'])) {
     <form method="post">
         <div class="form-group">
             <label for="bookName">Book Name:</label>
-            <input type="text" id="bookName" name="bookName" required>
+            <input type="text" id="bookName" name="bookName" required value=<?php echo $myName;;?>>
         </div>
         <div class="form-group">
             <label for="language">Language:</label>
             <select id="language" name="language" required>
+                <option value="lang"> <?php echo $mylang;?></option>
                 <option value="English">English</option>
                 <option value="Arabic">Arabic</option>
                 <option value="French">French</option>
@@ -61,27 +66,28 @@ if (isset($_POST['update'])) {
         </div>
         <div class="form-group">
             <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required>
+            <input type="text" id="title" name="title" required value=<?php echo $mytitle;?>>
         </div>
         <div class="form-group">
             <label for="author">Author:</label>
-            <input type="text" id="author" name="author" required>
+            <input type="text" id="author" name="author" required value=<?php echo $myauthor;?>>
         </div>
         <div class="form-group">
             <label for="pageNo">Number Of Page:</label>
-            <input type="number" id="pageNo" name="pageNO" required>
+            <input type="number" id="pageNo" name="pageNO" required value=<?php echo $myno;?>>
         </div>
         <div class="form-group">
             <label for="dop">Date Of Publication:</label>
-            <input type="date" id="dop" name="dop" required>
+            <input type="date" id="dop" name="dop" required value=<?php echo $mydop;?>>
         </div>
         <div class="form-group">
             <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="5" required></textarea>
+            <textarea id="description" name="description" rows="5" required>value=<?php echo $mydes;?></textarea>
         </div>
         <div class="form-group">
             <label for="availability">Availability:</label>
-            <input type="checkbox" id="availability" name="availability" value="1">
+            <input type="checkbox" id="availability" name="availability"
+                <?php if ($myavai == "1" ) echo 'checked=checked"';?>value="1">
         </div>
         <div>
             <label for="pdf">Upload:</label>

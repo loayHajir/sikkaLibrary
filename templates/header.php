@@ -1,11 +1,11 @@
 <nav>
     <div class="lgo">
-        <img src="logo.jpg" alt="" class="logo">
+        <img src="myimg/logo.jpg" alt="" class="logo">
         <h1 style="width: 20%;">Welcome to Sikka</h1>
 
         <ul>
             <?php
-       
+
             if ($isLoggedIn) {
                 echo '<li><a href="home.php?logout">Logout</a></li>';
             } else {

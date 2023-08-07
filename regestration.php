@@ -28,7 +28,7 @@ if (isset($_POST['Register'])) {
 
 <head>
     <title>Registration Form</title>
-    <link rel="stylesheet" href="../SikkaLibrary/style.css">
+    <!-- <link rel="stylesheet" href="../SikkaLibrary/style.css"> -->
     <style>
     body {
         font-family: Arial, sans-serif;
@@ -46,6 +46,7 @@ if (isset($_POST['Register'])) {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         font-size: 20px;
         color: #FFDEAD;
+        margin-left: 440px;
     }
 
     .registration-container h2 {
@@ -106,6 +107,7 @@ if (isset($_POST['Register'])) {
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        color: white;
     }
 
     .registration-container input[type="submit"]:hover {

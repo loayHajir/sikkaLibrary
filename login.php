@@ -42,7 +42,7 @@ if(isset($_POST['login'])){
     <style>
     body {
         font-family: Arial, sans-serif;
-        background-image: url('myimg/library.jpg');
+        background-image: url('../myimg/library.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -85,7 +85,7 @@ if(isset($_POST['login'])){
             a = 0;
         } else {
             document.getElementById('password').type = 'text';
-            document.getElementById('pass-icon').src = 'download.png';
+            document.getElementById('pass-icon').src = 'myimg/download.png';
             a = 1;
         }
     }
