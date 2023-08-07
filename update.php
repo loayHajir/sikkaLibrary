@@ -47,7 +47,7 @@ if (isset($_POST['update'])) {
     <h1>Update the book</h1>
     <form method="post">
         <div class="form-group">
-           <label for="bookName">Book Name:</label>
+            <label for="bookName">Book Name:</label>
             <input type="text" id="bookName" name="bookName" required>
         </div>
         <div class="form-group">
@@ -89,7 +89,6 @@ if (isset($_POST['update'])) {
             <input type="file" id="image" name="image">
         </div>
         <br>
-           
         </div>
         <br>
         <button name=" update">Update</button>

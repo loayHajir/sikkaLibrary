@@ -47,68 +47,8 @@ if (isset($_POST['submit'])) {
         justify-content: center;
         align-items: center;
     }
-
-    .forget-container {
-        width: 300px;
-        padding: 20px;
-        border-radius: 8px;
-        background-color: rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 20px;
-        color: #FFDEAD;
-    }
-
-    .forget-container h2 {
-        margin-bottom: 20px;
-    }
-
-    .forget-container input[type="text"],
-    .forget-container input[type="password"] {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #FFDEAD;
-        color: #000;
-        /* Text color on input fields */
-    }
-
-    .forget-container .btn-container {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-    }
-
-    .forget-container .btn-container input[type="submit"] {
-        width: 48%;
-        background-color: #A0522D;
-        padding: 14px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        color: #FFF;
-        /* Text color on buttons */
-    }
-
-    .forget-container .btn-container input[type="submit"]:hover {
-        background-color: #FFDEAD;
-        color: #000;
-        /* Text color on buttons when hovering */
-    }
-
-    .forget-container a {
-        color: #FFDEAD;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .forget-container a:hover {
-        color: #666;
-    }
     </style>
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
