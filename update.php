@@ -82,7 +82,7 @@ if (isset($_POST['update'])) {
         </div>
         <div class="form-group">
             <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="5" required>value=<?php echo $mydes;?></textarea>
+            <textarea id="description" name="description" rows="5" required><?php echo $mydes;?></textarea>
         </div>
         <div class="form-group">
             <label for="availability">Availability:</label>
