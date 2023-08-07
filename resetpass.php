@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
     <style>
         body {
           font-family: Arial, sans-serif;
-            background-image: url('library.jpg');
+            background-image: url('myimg/library.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -115,7 +115,9 @@ if (isset($_POST['submit'])) {
             color: #666;
         }
     </style>
+    <link rel="stylesheet" href="css/admin.css">
 </head>
+
 <body>
     <div class="reset-container">
         <form action="resetpass.php" method="post">

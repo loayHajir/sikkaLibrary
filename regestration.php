@@ -34,7 +34,7 @@ if (isset($_POST['Register'])) {
         font-family: Arial, sans-serif;
         background-color: #f2f2f2;
         text-align: center;
-        background-image: url('library.jpg');
+        background-image: url('myimg/library.jpg');
     }
 
     .registration-container {
@@ -73,7 +73,8 @@ if (isset($_POST['Register'])) {
         border-radius: 4px;
         background-color: #FFDEAD;
     }
-    #question{
+
+    #question {
         width: 100%;
         padding: 12px;
         margin: 8px 0;
@@ -110,21 +111,26 @@ if (isset($_POST['Register'])) {
     .registration-container input[type="submit"]:hover {
         background-color: #A0522D;
     }
-     #back{
+
+    #back {
         width: 48%;
         background-color: #A0522D;
         padding: 14px 20px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        
+
     }
-      
+
     #back a {
         color: white;
         text-decoration: none;
     }
-    #answer,#dob,#username,#password{
+
+    #answer,
+    #dob,
+    #username,
+    #password {
         width: 100%;
         padding: 12px;
         margin: 8px 0;
@@ -133,7 +139,6 @@ if (isset($_POST['Register'])) {
         border-radius: 4px;
         background-color: #FFDEAD;
     }
- 
     </style>
 </head>
 
