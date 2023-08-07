@@ -44,11 +44,11 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         padding: 8px;
         text-align: left;
         border-bottom: 1px solid #ddd;
-        color:white;
+        color: white;
     }
 
     th {
-        background-color:#A0522D;
+        background-color: #A0522D;
     }
 
     .button-container {
@@ -79,7 +79,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
 
     #logout {
         padding: 0.5rem 1rem;
-        background-color:#A0522D;
+        background-color: #A0522D;
         color: white;
         border: none;
         border-radius: 4px;
@@ -87,7 +87,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         position: absolute;
         bottom: 20px;
         right: 50px;
-        
+
     }
 
     ul {
@@ -117,7 +117,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         background-color: #111;
     }
 
-    img {
+    .logo {
         margin: 5px 0 0 30px;
         width: 7%;
         height: 55px;
@@ -131,7 +131,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
     <nav>
 
         <ul>
-            <img src="logo.jpg" alt="">
+            <img src="logo.jpg" alt="" class="logo">
             <li><a href="contactUs.php">Contact Us</a></li>
             <li><a href="location.php">Location</a></li>
             <li><a href="gallery.php">Gallery</a></li>
@@ -186,6 +186,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         </tbody>
     </table>
 </body>
+
 </html>
 <script>
 function msg() {

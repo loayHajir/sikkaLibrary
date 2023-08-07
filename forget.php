@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     $result = mysqli_num_rows($query);
 
     if (!$result) {
-        echo "incorrect name or password or answer";
+        echo "<p style='color: white;font-size:25px;'>incorrect name or password or answer. </p>";
     } else {
       header("location: resetpass.php");
           // var_dump($result);

@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
    
     if (!$result) {
         // Username not found in the database
-        echo "Invalid username or password.";
+        echo "<p style='color: white;font-size:25px;'>Invalid username or password.</p>";
     } else {
         
         $_SESSION['Type'] = $row['Type'];
@@ -63,7 +63,7 @@ if(isset($_POST['login'])){
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         font-size: 20px;
         color: #FFDEAD;
-        
+
     }
 
     .login-container h2 {
@@ -79,29 +79,31 @@ if(isset($_POST['login'])){
         border: 1px solid #ccc;
         border-radius: 4px;
         background-color: #FFDEAD;
-    
-       
-    } 
+
+
+    }
+
     .login-container .btn-container {
         display: flex;
         justify-content: space-between;
         margin-top: 10px;
-        
+
     }
 
     .login-container .btn-container input[type="submit"] {
         width: 48%;
-            background-color: #A0522D;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            color: #FFF;
+        background-color: #A0522D;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        color: #FFF;
     }
 
     .login-container .btn-container input[type="submit"]:hover {
         background-color: #FFDEAD;
-            color: #000; /* Text color on buttons when hovering */
+        color: #000;
+        /* Text color on buttons when hovering */
     }
 
     .login-container a {
@@ -109,8 +111,6 @@ if(isset($_POST['login'])){
         text-decoration: none;
         font-size: 14px;
     }
-
-
     </style>
 </head>
 
@@ -133,21 +133,20 @@ if(isset($_POST['login'])){
     </div>
 
     <script>
-        var a ;
-        function pass() {
-            if (a==1) {
-           document.getElementById('password').type='password';
-           document.getElementById('pass-icon').src='1159224-200.png';
-           a=0;
-            }
-            else {
-            document.getElementById('password').type='text';
-           document.getElementById('pass-icon').src='download.png';
-           a=1;
-            }
+    var a;
+
+    function pass() {
+        if (a == 1) {
+            document.getElementById('password').type = 'password';
+            document.getElementById('pass-icon').src = '1159224-200.png';
+            a = 0;
+        } else {
+            document.getElementById('password').type = 'text';
+            document.getElementById('pass-icon').src = 'download.png';
+            a = 1;
         }
+    }
     </script>
 </body>
 
 </html>
-

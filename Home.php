@@ -21,21 +21,47 @@ if (isset($_GET['logout'])) {
 <head>
     <title></title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+
+    </style>
 
 </head>
 
 <body>
 
-<?php include 'templates/header.php';?>
+    <?php include 'templates/header.php';?>
 
-<div class="header-content">
-        <div class="info">
-           <p>This is a place where you can find and explore various books in our library collection. Feel free to browse and download any book you like!</p>
-           <a class="learn-more-button" href="aboutUs.php">Learn More</a>
+    <div class="content">
+        <div class="history catagories">
+            <img src="history.jpg" alt="">
+        </div>
+        <div class="romantic catagories">
+            <img src="history.jpg" alt="">
+        </div>
+        <div class="movies catagories">
+            <img src="history.jpg" alt="">
+        </div>
+        <div class="stories catagories">
+            <img src="history.jpg" alt="">
+        </div>
+        <div class="comedy catagories">
+            <img src="history.jpg" alt="">
+        </div>
+        <div class="drama catagories">
+            <img src="history.jpg" alt="">
+        </div>
+        <div class="science catagories">
+            <img src="history.jpg" alt="">
+        </div>
+        <div class="sport catagories">
+            <img src="history.jpg" alt="">
+        </div>
+        <div class="horror catagories">
+            <img src="history.jpg" alt="">
         </div>
     </div>
 
-    <table>
+    <!-- <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -75,7 +101,7 @@ if (isset($_GET['logout'])) {
             }
             ?>
         </tbody>
-    </table>
+    </table> -->
 </body>
 
 </html>
