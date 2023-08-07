@@ -53,65 +53,8 @@ if(isset($_POST['login'])){
         justify-content: center;
         align-items: center;
     }
-
-    .login-container {
-        width: 300px;
-        padding: 20px;
-        border-radius: 8px;
-        background-color: rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 20px;
-        color: #FFDEAD;
-
-    }
-
-    .login-container h2 {
-        margin-bottom: 20px;
-    }
-
-    .login-container input[type="text"],
-    .login-container input[type="password"] {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #FFDEAD;
-
-
-    }
-
-    .login-container .btn-container {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-
-    }
-
-    .login-container .btn-container input[type="submit"] {
-        width: 48%;
-        background-color: #A0522D;
-        padding: 14px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        color: #FFF;
-    }
-
-    .login-container .btn-container input[type="submit"]:hover {
-        background-color: #FFDEAD;
-        color: #000;
-        /* Text color on buttons when hovering */
-    }
-
-    .login-container a {
-        color: #FFDEAD;
-        text-decoration: none;
-        font-size: 14px;
-    }
     </style>
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
