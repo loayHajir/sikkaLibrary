@@ -37,7 +37,7 @@ if (isset($_GET['logout'])) {
     
         .header {
             text-align: center;
-            background-image: url('library.jpg');
+            background-image: url('myimg/library.jpg');
             background-size: cover;
             padding: 100px 0;
             color: white;

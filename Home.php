@@ -33,31 +33,31 @@ if (isset($_GET['logout'])) {
 
     <div class="content">
         <div class="history catagories">
-            <img src="history.jpg" alt="">
+            <img src="myimg/history.jpg" alt="">
         </div>
         <div class="romantic catagories">
-            <img src="history.jpg" alt="">
+            <img src="myimg/history.jpg" alt="">
         </div>
         <div class="movies catagories">
-            <img src="history.jpg" alt="">
+            <img src="myimg/history.jpg" alt="">
         </div>
         <div class="stories catagories">
-            <img src="history.jpg" alt="">
+            <img src="myimg/history.jpg" alt="">
         </div>
         <div class="comedy catagories">
-            <img src="history.jpg" alt="">
+            <img src="myimg/history.jpg" alt="">
         </div>
         <div class="drama catagories">
-            <img src="history.jpg" alt="">
+            <img src="myimg/history.jpg" alt="">
         </div>
         <div class="science catagories">
-            <img src="history.jpg" alt="">
+            <img src="myimg/history.jpg" alt="">
         </div>
         <div class="sport catagories">
-            <img src="history.jpg" alt="">
+            <img src="myimg/history.jpg" alt="">
         </div>
         <div class="horror catagories">
-            <img src="history.jpg" alt="">
+            <img src="myimg/history.jpg" alt="">
         </div>
     </div>
 

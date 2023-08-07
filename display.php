@@ -18,7 +18,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
     body {
         padding: 0;
         margin: 0;
-        background-image: url('library.jpg');
+        background-image: url('myimg/library.jpg');
     }
 
     .btn {
@@ -131,7 +131,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
     <nav>
 
         <ul>
-            <img src="logo.jpg" alt="" class="logo">
+            <img src="myimg/96606910-library-logo-with-building-and-books.webp" alt="" class="logo">
             <li><a href="contactUs.php">Contact Us</a></li>
             <li><a href="location.php">Location</a></li>
             <li><a href="gallery.php">Gallery</a></li>

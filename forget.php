@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
     <style>
     body {
         font-family: Arial, sans-serif;
-        background-image: url('library.jpg');
+        background-image: url('myimg/library.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;

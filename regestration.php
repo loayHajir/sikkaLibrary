@@ -34,7 +34,7 @@ if (isset($_POST['Register'])) {
         font-family: Arial, sans-serif;
         background-color: #f2f2f2;
         text-align: center;
-        background-image: url('library.jpg');
+        background-image: url('myimg/library.jpg');
     }
 
     .registration-container {

@@ -14,7 +14,7 @@
         justify-content: center;
         height: 100vh;
         margin: 0;
-        background-image: url('library.jpg');
+        background-image: url('myimg/library.jpg');
     }
 
     .splash-content {
@@ -34,7 +34,7 @@
     <!-- Your splash page content goes here -->
     <div class="splash-content">
         <h1>Welcome to Sikka library!</h1>
-        <img src="96606910-library-logo-with-building-and-books (1).webp" alt="Logo" class="logo">
+        <img src="myimg/logo.jpg" alt="Logo" class="logo">
         <p>Loading...</p>
 
 
