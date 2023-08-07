@@ -15,15 +15,13 @@ if (isset($_GET['logout'])) {
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title></title>
+    <title>Home</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-
-    </style>
 
 </head>
 
@@ -32,31 +30,31 @@ if (isset($_GET['logout'])) {
     <?php include 'templates/header.php';?>
 
     <div class="content">
-        <div class="history catagories">
+        <div class="history catagories" onclick="showBooks('history')">
+            <img src="history.jpg" alt="History">
+        </div>
+        <div class="romantic catagories" onclick="showBooks('history')">
             <img src="history.jpg" alt="">
         </div>
-        <div class="romantic catagories">
+        <div class="movies catagories" onclick="showBooks('history')">
             <img src="history.jpg" alt="">
         </div>
-        <div class="movies catagories">
+        <div class="stories catagories" onclick="showBooks('history')">
             <img src="history.jpg" alt="">
         </div>
-        <div class="stories catagories">
+        <div class="comedy catagories" onclick="showBooks('history')">
             <img src="history.jpg" alt="">
         </div>
-        <div class="comedy catagories">
+        <div class="drama catagories" onclick="showBooks('history')">
             <img src="history.jpg" alt="">
         </div>
-        <div class="drama catagories">
+        <div class="science catagories" onclick="showBooks('history')">
             <img src="history.jpg" alt="">
         </div>
-        <div class="science catagories">
+        <div class="sport catagories" onclick="showBooks('history')">
             <img src="history.jpg" alt="">
         </div>
-        <div class="sport catagories">
-            <img src="history.jpg" alt="">
-        </div>
-        <div class="horror catagories">
+        <div class="horror catagories" onclick="showBooks('history')">
             <img src="history.jpg" alt="">
         </div>
     </div>
@@ -102,6 +100,12 @@ if (isset($_GET['logout'])) {
             ?>
         </tbody>
     </table> -->
+    <script>
+        function showBooks(category) {
+            // Redirect to a page where you display books for the selected category
+            window.location.href = "category_books.php?category=" + category;
+        }
+    </script>
 </body>
 
 </html>
