@@ -1,6 +1,6 @@
 <nav>
     <div class="lgo">
-        <img src="myimg/logo.jpg" alt="" class="logo">
+        <img src="myimg/96606910-library-logo-with-building-and-books.webp" alt="" class="logo">
         <h1 style="width: 20%;">Welcome to Sikka</h1>
 
         <ul>
@@ -13,7 +13,7 @@
             }
             ?>
             <li><a href="contactUs.php">Contact Us</a></li>
-            <li><a href="gallery.php">Gallery</a></li>
+            <li><a href="category.php">Category</a></li>
             <li><a href="aboutUs.php">About Us</a></li>
             <li><a href="Home.php">Home</a></li>
         </ul>

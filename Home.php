@@ -15,100 +15,60 @@ if (isset($_GET['logout'])) {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    background-image: url('myimg/library.jpg');
+    background-size: cover;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height:449px;
+        }
+        .header-content .info {
+    max-width: 70%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 100px;
+    font-size:25px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    grid-area: text;
+    margin: 25px;    
 
+}
+
+.header-content p {
+    margin-top:20px;
+    margin-right:20px;
+    font-size:30x;
+    font-family: "Times New Roman";}
+
+    .learn-more-button {
+    background-color: #A0522D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;} 
+    
+        </style>
+        <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+<?php include 'templates/header.php';?>
 
-    <?php include 'templates/header.php';?>
-
-    <div class="content">
-        <div class="history catagories">
-            <img src="myimg/history.jpg" alt="History">
-        </div>
-        <div class="romantic catagories">
-            <img src="myimg/history.jpg" alt="">
-        </div>
-        <div class="movies catagories">
-            <img src="myimg/history.jpg" alt="">
-        </div>
-        <div class="stories catagories">
-            <img src="myimg/history.jpg" alt="">
-        </div>
-        <div class="comedy catagories">
-            <img src="myimg/history.jpg" alt="">
-        </div>
-        <div class="drama catagories">
-            <img src="myimg/history.jpg" alt="">
-        </div>
-        <div class="science catagories">
-            <img src="myimg/history.jpg" alt="">
-        </div>
-        <div class="sport catagories">
-            <img src="myimg/history.jpg" alt="">
-        </div>
-        <div class="horror catagories">
-            <img src="myimg/history.jpg" alt="">
-        </div>
-        <div class="horror catagories">
-            <img src=" myimg/history.jpg" alt="">
-        </div>
-    </div>
-
-    <!-- <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Book Name</th>
-                <th>Image</th>
-                <th>Description</th>
-                <th>Language</th>
-                <th>Available</th>
-                <th>PDF</th>
-            </tr>
-        </thead>
-
-        <tbody id="table-body">
-            <?php
-            $SQL = "select * from `books`";
-            $result = mysqli_query($conn, $SQL);
-            if ($result) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $id = $row['ID'];
-                    $bookname = $row['BookName'];
-                    $desc = $row['Description'];
-                    $lang = $row['Language'];
-                    $available = $row['Available'];
-                    $pdf = $row['PDF'];
-                    $img = $row['image'];
-                    echo ' 
-    <tr> 
-    <th scope="row">' . $id . '</th>
-    <td>' . $bookname . '</td>
-    <td>' . ($img? '<img src="' . $img . '"/>' : 'No Image') .'</td>
-    <td>' . $desc . '</td>
-    <td>' . $lang . '</td>
-    <td>' . $available . '</td>
-    <td> <a id="down" href="download.php?file=' . urlencode($pdf) . '">Download PDF</a></td>
-    </tr>';
-                }
-            }
-            ?>
-        </tbody>
-    </table> -->
-    <script>
-    function showBooks(category) {
-        // Redirect to a page where you display books for the selected category
-        window.location.href = "category_books.php?category=" + category;
-    }
-    </script>
+<div class="header-content">
+        <div class="info">
+           <p>This is a place where you can find and explore various books in our library collection. Feel free to browse and download any book you like!</p>
+           <a class="learn-more-button" href="aboutUs.php">Learn More</a>
 </body>
-
 </html>

@@ -22,23 +22,15 @@ if (isset($_GET['logout'])) {
 <head>
     <title></title>
     <link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
-
-<?php include 'templates/header.php';?>
-
+    
     <style>
-    body {
-        padding: 0;
-        margin: 0;
-    }
     body {
         font-family: Arial, sans-serif;
         background-color: #f2f2f2;
         text-align: center;
         background-image: url('myimg/library.jpg');
+        padding: 0;
+        margin: 0;
     }
     
     .contact-form{
@@ -156,8 +148,9 @@ h1{
 </style>
 </head>
 
+
 <body>
-    
+<?php include 'templates/header.php';?>
 <div class="header">
         <h2>Contact Us</h2>
     </div>
