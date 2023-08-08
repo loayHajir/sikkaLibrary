@@ -60,7 +60,7 @@ if (isset($_POST['update'])) {
 
     .back-button {
         padding: 0.5rem 1rem;
-        background-color: green;
+        background-color:  #A0522D;
         color: white;
         border: none;
         border-radius: 4px;
@@ -113,7 +113,7 @@ if (isset($_POST['update'])) {
     }
 
     button[type="submit"]:hover {
-        background-color: #45a049;
+        background-color: #A0522D;
     }
     </style>
 </head>
