@@ -45,6 +45,48 @@ if (isset($_POST['update'])) {
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    h1 {
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    select {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button[type="submit"] {
+        padding: 0.5rem 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    </style>
 </head>
 
 <body>

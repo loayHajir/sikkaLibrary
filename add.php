@@ -76,8 +76,15 @@ if (isset($_POST['submit'])) {
 <html>
 
 <head>
-    <link rel="stylesheet" href="../SikkaLibrary/style.css">
+    <link rel="stylesheet" href=".">
     <style>
+    body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        background-image: url('myimg/library.jpg');
+        color: white;
+    }
+
     .back-button {
         padding: 0.5rem 1rem;
         background-color: green;
@@ -90,6 +97,51 @@ if (isset($_POST['submit'])) {
     .back-button a {
         color: white;
         text-decoration: none;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+        margin-left: 35%;
+        ;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 50%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type="file"] {}
+
+    select {
+        width: 50%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button[type="submit"] {
+        padding: 0.5rem 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #45a049;
     }
     </style>
 </head>
