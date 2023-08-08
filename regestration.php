@@ -82,7 +82,7 @@ if (isset($_POST['Register'])) {
         box-sizing: border-box;
         border: 1px solid #ccc;
         border-radius: 4px;
-        background-color: #FFDEAD;
+       
     }
 
     .registration-container label {
