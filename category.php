@@ -100,22 +100,23 @@ if (isset($_GET['logout'])) {
             </select>
         </div>
         <div class="category-grid">
-            <div class="category-card">
+            <a href="category_books.php?category=history" class="category-card">
                 <img src="myimg/history.jpg" alt="History">
                 <h3>History</h3>
-            </div>
-            <div class="category-card">
+            </a>
+            <a href="category_books.php?category=romantic" class="category-card">
                 <img src="myimg/history.jpg" alt="Romantic">
                 <h3>Romantic</h3>
-            </div>
-            <div class="category-card">
+            </a>
+            <a href="category_books.php?category=movies" class="category-card">
                 <img src="myimg/history.jpg" alt="Movies">
                 <h3>Movies</h3>
-            </div>
-            <div class="category-card">
-                <img src="myimg/history.jpg" alt="Movies">
-                <h3>Literature</h3>
-            </div>
+            </a>
+            <a href="category_books.php?category=literature" class="category-card">
+                <img src="myimg/history.jpg" alt="Literature">
+                <h3>Movies</h3>
+            </a>
+            <!-- Add more category links -->
         </div>
     </div>
 
