@@ -76,7 +76,6 @@ if (isset($_POST['submit'])) {
 <html>
 
 <head>
-    <link rel="stylesheet" href=".">
     <style>
     body {
         font-family: Arial, sans-serif;
@@ -106,7 +105,6 @@ if (isset($_POST['submit'])) {
     .form-group {
         margin-bottom: 1rem;
         margin-left: 35%;
-        ;
     }
 
     label {
@@ -115,17 +113,17 @@ if (isset($_POST['submit'])) {
     }
 
     input[type="text"],
-    textarea {
+    textarea,
+    input[type="number"],
+    input[type="date"] {
         width: 50%;
         padding: 0.5rem;
         border: 1px solid #ccc;
         border-radius: 4px;
     }
 
-    input[type="file"] {}
-
     select {
-        width: 50%;
+        width: 52%;
         padding: 0.5rem;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -185,16 +183,19 @@ if (isset($_POST['submit'])) {
             <textarea id="description" name="description" rows="5" required></textarea>
         </div>
         <div class="form-group">
-            <label for="availability">Availability:</label>
+            Availability:
             <input type="checkbox" id="availability" name="availability" value="1">
         </div>
-        <div>
-            <label for="pdf">Upload:</label>
+        <div class="form-group">
+            pdf:
             <input type="file" id="pdf" name="pdf">
+            img:
             <input type="file" id="image" name="image">
         </div>
         <br>
-        <button name="submit" class="back-button">Submit</button>
+        <!-- <div class="form-group"> -->
+        <button name="submit" class="back-button" style="margin-left:47%;">Submit</button>
+        <!-- </div> -->
     </form>
 </body>
 

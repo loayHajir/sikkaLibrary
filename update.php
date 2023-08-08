@@ -29,8 +29,13 @@ if (isset($_POST['update'])) {
     $lang = $_POST['language'];
     $available = $_POST['availability'];
     $pdf = $_POST['upload'];
+    $title = $_POST['title'];
+    $auhtor = $_POST['author'];
+    $pagenum = $_POST['pageNO'];
+    $dop = $_POST['dop'];
+    $img = $_POST['image'];
     // var_dump($_POST);
-    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Available='$available',PDF='$pdf'where id='$id'";
+    $sql = "update `books`set id='$id',Bookname='$bookName',Description='$des',Language='$lang',Available='$available',PDF='$pdf',title ='$title',author='$auhtor',pageNum='$pagenum',dop='$dop',image='$img' where id='$id'";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data update Successfully";
@@ -46,12 +51,34 @@ if (isset($_POST['update'])) {
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
+    body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        background-image: url('myimg/library.jpg');
+        color: white;
+    }
+
+    .back-button {
+        padding: 0.5rem 1rem;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .back-button a {
+        color: white;
+        text-decoration: none;
+    }
+
     h1 {
         text-align: center;
     }
 
     .form-group {
         margin-bottom: 1rem;
+        margin-left: 35%;
     }
 
     label {
@@ -60,15 +87,17 @@ if (isset($_POST['update'])) {
     }
 
     input[type="text"],
-    textarea {
-        width: 100%;
+    textarea,
+    input[type="number"],
+    input[type="date"] {
+        width: 50%;
         padding: 0.5rem;
         border: 1px solid #ccc;
         border-radius: 4px;
     }
 
     select {
-        width: 100%;
+        width: 52%;
         padding: 0.5rem;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -90,6 +119,7 @@ if (isset($_POST['update'])) {
 </head>
 
 <body>
+    <button class="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
     <h1>Update the book</h1>
     <form method="post">
         <div class="form-group">
@@ -127,19 +157,18 @@ if (isset($_POST['update'])) {
             <textarea id="description" name="description" rows="5" required><?php echo $mydes;?></textarea>
         </div>
         <div class="form-group">
-            <label for="availability">Availability:</label>
+            Availability:
             <input type="checkbox" id="availability" name="availability"
                 <?php if ($myavai == "1" ) echo 'checked=checked"';?>value="1">
         </div>
-        <div>
-            <label for="pdf">Upload:</label>
+        <div class="form-group">
+            pdf:
             <input type="file" id="pdf" name="pdf">
+            img:
             <input type="file" id="image" name="image">
         </div>
         <br>
-        </div>
-        <br>
-        <button name=" update">Update</button>
+        <button name="update" class="back-button" style="margin-left:47%;">Update</button>
     </form>
 </body>
 
