@@ -160,7 +160,7 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
     </div>
     <div class="buttoncontainer">
-        <button id="add-button"><a href="category_books.php">Add Category</a></button>
+        <button id="add-button"><a href="addCategory.php">Add Category</a></button>
     </div>
     <table>
         <thead>
