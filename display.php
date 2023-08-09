@@ -1,24 +1,15 @@
 <?php
-include "connect.php";
-session_start();
 
-if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
-    // If the user is not an admin, redirect them to the login page
-    header("location: login.php");
-    exit(); // Stop script execution after redirecting
-}
-
+include "core/connect.php";
+include "core/admin.php";
+$title = 'Book Table';
+ob_start();
 ?>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Book Table</title>
-    <style>
+<style>
     body {
         padding: 0;
         margin: 0;
-        background-image: url('myimg/library.jpg');
+        background-image: url('assets/img/library.jpg');
     }
 
     .btn {
@@ -139,83 +130,73 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         height: 55px;
         border-radius: 100px;
     }
-    </style>
-</head>
+</style>
 
-<body>
+<div class="button-container">
+    <button id="add-button"><a href="add.php">Add Book</a></button>
+    <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
+</div>
+<div class="buttoncontainer">
+    <button id="add-button"><a href="addCategory.php">Add Category</a></button>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Book Name</th>
+            <th>Description</th>
+            <th>Language</th>
+            <th>Available</th>
+            <th></th>
+        </tr>
+    </thead>
 
-    <nav>
+    <tbody id="table-body">
+        <?php
+        $SQL = "select * from `books`";
+        $result = mysqli_query($conn, $SQL);
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $id = $row['ID'];
+                $bookname = $row['BookName'];
+                $desc = $row['Description'];
+                $lang = $row['Language'];
+                $available = $row['Available'];
+                echo ' 
+<tr> 
+<th scope="row">' . $id . '</th>
+<td>' . $bookname . '</td>
+<td>' . $desc . '</td>
+<td>' . $lang . '</td>
+<td>' . $available . '</td>
+<td> 
+<a class="btn btn-primary" href="update.php? updateid=' . $id . '" class="text-light">Update</a>
 
-        <ul>
-            <img src="myimg/96606910-library-logo-with-building-and-books.webp" alt="" class="logo">
-            <li><a href="contactUs.php">Contact Us</a></li>
-            <li><a href="location.php">Location</a></li>
-            <li><a href="gallery.php">Gallery</a></li>
-            <li><a href="aboutUs.php">About Us</a></li>
-            <li><a href="display.php">Home</a></li>
-        </ul>
-    </nav>
-    <div class="button-container">
-        <button id="add-button"><a href="add.php">Add Book</a></button>
-        <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
-    </div>
-    <div class="buttoncontainer">
-        <button id="add-button"><a href="addCategory.php">Add Category</a></button>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Book Name</th>
-                <th>Description</th>
-                <th>Language</th>
-                <th>Available</th>
-                <th></th>
-            </tr>
-        </thead>
-
-        <tbody id="table-body">
-            <?php
-            $SQL = "select * from `books`";
-            $result = mysqli_query($conn, $SQL);
-            if ($result) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $id = $row['ID'];
-                    $bookname = $row['BookName'];
-                    $desc = $row['Description'];
-                    $lang = $row['Language'];
-                    $available = $row['Available'];
-                    echo ' 
-    <tr> 
-    <th scope="row">' . $id . '</th>
-    <td>' . $bookname . '</td>
-    <td>' . $desc . '</td>
-    <td>' . $lang . '</td>
-    <td>' . $available . '</td>
-    <td> 
-    <a class="btn btn-primary" href="update.php? updateid=' . $id . '" class="text-light">Update</a>
-
-    <a class="btn btn-danger" onclick="return msg()" href="delete.php? deleteid=' . $id . '"
-    class="text-light">delete</a>
-    </td>
-    </tr>';
-                }
+<a class="btn btn-danger" onclick="return msg()" href="delete.php? deleteid=' . $id . '"
+class="text-light">delete</a>
+</td>
+</tr>';
             }
-            ?>
-        </tbody>
-    </table>
-</body>
+        }
+        ?>
+    </tbody>
+</table>
 
-</html>
 <script>
-function msg() {
+    function msg() {
 
-    var confirmation = confirm("Are you want to delete?");
-    if (confirmation) {
-        alert("deleted successfully!");
-    } else {
-        return false;
+        var confirmation = confirm("Are you want to delete?");
+        if (confirmation) {
+            alert("deleted successfully!");
+        } else {
+            return false;
+        }
+
     }
-
-}
 </script>
+
+<?php
+
+$page = ob_get_clean();
+
+include 'templates/html.php';

@@ -2,6 +2,11 @@
 
 include 'config.php';
 
+session_start();
+
+// Check if the user is logged in or not
+$isLoggedIn = isset($_SESSION['user_id']);
+
 $conn = mysqli_connect($serverName, $userName, $password, $db);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

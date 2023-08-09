@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
     body {
         padding: 0;
         margin: 0;
-        background-image: url('myimg/library.jpg');
+        background-image: url('assets/img/library.jpg');
     }
     
     .back-button {

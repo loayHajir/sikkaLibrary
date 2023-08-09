@@ -1,34 +1,17 @@
 <?php
-include "connect.php";
-// Start the session
-session_start();
 
-// Check if the user is logged in or not
-$isLoggedIn = isset($_SESSION['user_id']);
-// Logout functionality
-if (isset($_GET['logout'])) {
-    // Clear the session data and destroy the session
-    session_unset();
-    session_destroy();
-    // Redirect to the home page after logout
-    header('Location: logout.php');
-    exit();
-}
+include "core/connect.php";
+include "core/admin.php";
+$title = 'Contact Us';
+ob_start();
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title></title>
-    <link rel="stylesheet" href="css/style.css">
     
     <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f2f2f2;
         text-align: center;
-        background-image: url('myimg/library.jpg');
+        background-image: url('assets/img/library.jpg');
         padding: 0;
         margin: 0;
     }
@@ -146,11 +129,8 @@ h1{
             color: white;
         }
 </style>
-</head>
 
 
-<body>
-<?php include 'templates/header.php';?>
 <div class="header">
         <h2>Contact Us</h2>
     </div>
@@ -174,6 +154,8 @@ h1{
             </form>
         </div>
     </section>
-</body>
+    <?php
 
-</html>
+$page = ob_get_clean();
+
+include 'templates/html.php';
