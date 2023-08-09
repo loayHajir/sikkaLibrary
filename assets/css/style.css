@@ -1,10 +1,14 @@
 @import 'reset.css';
+
+/* Our Defaults */
 @import 'theme.css';
+
+/* Layout */
 @import 'header.css';
 @import 'footer.css';
 @import 'body.css';
 
+/* Components */
 @import 'books.css';
 @import 'categories.css';
-
-@import 'user';
+@import 'user.css';
