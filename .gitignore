@@ -1,5 +1,4 @@
 /uploads
-/images
 
-config.local.php
-config.live.php
+core/config.local.php
+core/config.live.php
