@@ -102,21 +102,6 @@ if (isset($_GET['logout'])) {
                 <img src="myimg/history.jpg" alt="History">
                 <h3>History</h3>
             </div>
-            <div class="category-card">
-                <img src="myimg/history.jpg" alt="Romantic">
-                <h3>Romantic</h3>
-            </div>
-            <div class="category-card">
-                <img src="myimg/history.jpg" alt="Movies">
-                <h3>Movies</h3>
-            </div>
-            <div class="category-card">
-                <img src="myimg/history.jpg" alt="Movies">
-                <h3>Literature</h3>
-            </div>
-        </div>
-    </div>
-
     <script>
     function showBooks(category) {
         // Redirect to a page where you display books for the selected category

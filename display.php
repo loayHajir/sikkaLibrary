@@ -67,6 +67,22 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         right: 150px;
     }
 
+    .buttoncontainer {
+        text-align: left;
+    }
+
+    .buttoncontainer button {
+        padding: 0.5rem 1rem;
+        background-color: #A0522D;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+        right: 250px;
+    }
+
     a {
         text-decoration: none;
         color: white;
@@ -140,8 +156,11 @@ if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
         </ul>
     </nav>
     <div class="button-container">
-        <button id="add-button"><a href="add.php">Add</a></button>
+        <button id="add-button"><a href="add.php">Add Book</a></button>
         <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
+    </div>
+    <div class="buttoncontainer">
+        <button id="add-button"><a href="category_books.php">Add Category</a></button>
     </div>
     <table>
         <thead>
