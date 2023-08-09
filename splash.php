@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Splash Page</title>
-
-    <style>
+<?php
+include "core/connect.php";
+$title = 'Sikka Library';
+ob_start();
+?>
+<style>
     /* Add any necessary CSS styles here */
     body {
         font-family: Arial, sans-serif;
@@ -27,25 +26,26 @@
         height: 150px;
         color: #FFDEAD;
     }
-    </style>
-</head>
+</style>
 
-<body>
-    <!-- Your splash page content goes here -->
-    <div class="splash-content">
-        <h1>Welcome to Sikka library!</h1>
-        <img src="assets/img/logo.jpg" alt="Logo" class="logo">
-        <p>Loading...</p>
-    </div>
-    <!-- JavaScript code to handle the loading effect and redirect to the main page -->
-    <script>
+
+<!-- Your splash page content goes here -->
+<div class="splash-content">
+    <h1>Welcome to Sikka library!</h1>
+    <img src="assets/img/logo.jpg" alt="Logo" class="logo">
+    <p>Loading...</p>
+</div>
+<!-- JavaScript code to handle the loading effect and redirect to the main page -->
+<script>
     // Simulate a delay before redirecting to the main page (in milliseconds)
     const splashDelay = 3000; // 3 seconds
     // Wait for the specified delay and then redirect to another page
     setTimeout(() => {
-        window.location.href = "home.php"; // Replace with the path to your main page
+        window.location.href = "index.php"; // Replace with the path to your main page
     }, splashDelay);
-    </script>
-</body>
+</script>
+<?php
 
-</html>
+$page = ob_get_clean();
+
+include 'templates/html.php';

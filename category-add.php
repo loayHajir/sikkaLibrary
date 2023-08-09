@@ -1,14 +1,9 @@
 <?php
-include "connect.php";
 
-session_start(); // Start the PHP session
+include "core/connect.php";
+include "core/admin.php";
+$title = 'Add Category';
 
-// Check if the user is logged in and is an admin
-if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
-    // If the user is not an admin, redirect them to the login page or show an error message
-    header("location: login.php");
-    exit(); // Stop script execution after redirecting
-}
 if (isset($_POST['submit'])) {
     sanitizeXSS();
     $CategoryName = $_POST['CategoryName'];
@@ -22,14 +17,10 @@ if (isset($_POST['submit'])) {
     }
 
 }
+
+ob_start();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
     body {
         padding: 0;
@@ -87,8 +78,6 @@ if (isset($_POST['submit'])) {
         border-radius: 4px;
     }
 </style>
-</head>
-<body>
 <button class="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
     <h1>Add a Category</h1>
     <form method="post" enctype="multipart/form-data">
@@ -98,5 +87,9 @@ if (isset($_POST['submit'])) {
         </div>
         <button name="submit" class="back-button" style="margin-left:47%;">Submit</button>
 </form>
-</body>
-</html>
+
+<?php
+
+$page = ob_get_clean();
+
+include 'templates/html.php';

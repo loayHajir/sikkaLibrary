@@ -1,6 +1,7 @@
 <?php
-include 'connect.php';
-session_start();
+include "core/connect.php";
+// include "core/admin.php";
+$title = 'Forgot your password?';
 
 if (isset($_POST['submit'])) {
     $name = $_POST['username'];
@@ -13,27 +14,23 @@ if (isset($_POST['submit'])) {
     if (!$result) {
         echo "<p style='color: white;font-size:25px;'>incorrect name or password or answer. </p>";
     } else {
-      header("location: resetpass.php");
-          // var_dump($result);
-    if ($result > 0) {
-        // Username, question, and answer are correct, store user ID in the session
-        $user_data = mysqli_fetch_assoc($query);
-        $_SESSION['user_id'] = $user_data['ID'];
-        header("location: resetpass.php");
-        exit();
-    } else {
-        $_SESSION['resetpass_error'];
+        header("location: reset-pass.php");
+        // var_dump($result);
+        if ($result > 0) {
+            // Username, question, and answer are correct, store user ID in the session
+            $user_data = mysqli_fetch_assoc($query);
+            $_SESSION['user_id'] = $user_data['ID'];
+            header("location: reset-pass.php");
+            exit();
+        } else {
+            $_SESSION['resetpass_error'];
+        }
     }
 }
-}
+
+ob_start();
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Forgot Password</title>
-    <style>
+<style>
     body {
         font-family: Arial, sans-serif;
         background-image: url('assets/img/library.jpg');
@@ -47,29 +44,29 @@ if (isset($_POST['submit'])) {
         justify-content: center;
         align-items: center;
     }
-    </style>
-    <link rel="stylesheet" href="css/admin.css">
-</head>
+</style>
+<link rel="stylesheet" href="assets/css/admin.css">
 
-<body>
-    <div class="forget-container">
-        <form action="forget.php" method="post">
-            <h2>Forgot Password</h2>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+<div class="forget-container">
+    <form action="forget.php" method="post">
+        <h2>Forgot Password</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
 
-            <label for="question">Security Question:</label>
-            <input type="text" id="question" name="question" required>
+        <label for="question">Security Question:</label>
+        <input type="text" id="question" name="question" required>
 
-            <label for="answer">Answer:</label>
-            <input type="text" id="answer" name="answer" required>
+        <label for="answer">Answer:</label>
+        <input type="text" id="answer" name="answer" required>
 
-            <div class="btn-container">
-                <input type="submit" value="Submit" name="submit">
-                <a href="login.php">Back to Login</a>
-            </div>
-        </form>
-    </div>
-</body>
+        <div class="btn-container">
+            <input type="submit" value="Submit" name="submit">
+            <a href="login.php">Back to Login</a>
+        </div>
+    </form>
+</div>
+<?php
 
-</html>
+$page = ob_get_clean();
+
+include 'templates/html.php';

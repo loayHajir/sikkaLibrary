@@ -60,7 +60,7 @@ ob_start();
         <br>
         <div class="btn-container">
             <input type="submit" value="Login" name="login">
-            <input type="submit" value="Registration" formaction="regestration.php">
+            <input type="submit" value="Registration" formaction="register.php">
         </div>
     </form>
 </div>

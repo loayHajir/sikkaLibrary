@@ -133,11 +133,11 @@ ob_start();
 </style>
 
 <div class="button-container">
-    <button id="add-button"><a href="add.php">Add Book</a></button>
-    <a id="logout" href="logout.php? logout=' . $id . '" class="text-light">Logout</a>
+    <a href="book-add.php" id="button add-button">Add Book</a>
+    <a id="logout" href="logout.php? logout=' . $id . '" class="button text-light">Logout</a>
 </div>
 <div class="buttoncontainer">
-    <button id="add-button"><a href="addCategory.php">Add Category</a></button>
+    <a href="category-add.php" class="button" id="add-button">Add Category</a>
 </div>
 <table>
     <thead>
@@ -170,9 +170,9 @@ ob_start();
 <td>' . $lang . '</td>
 <td>' . $available . '</td>
 <td> 
-<a class="btn btn-primary" href="update.php? updateid=' . $id . '" class="text-light">Update</a>
+<a class="btn btn-primary" href="book-update.php? updateid=' . $id . '" class="text-light">Update</a>
 
-<a class="btn btn-danger" onclick="return msg()" href="delete.php? deleteid=' . $id . '"
+<a class="btn btn-danger" onclick="return msg()" href="book-delete.php? deleteid=' . $id . '"
 class="text-light">delete</a>
 </td>
 </tr>';
