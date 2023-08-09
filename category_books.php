@@ -1,102 +1,49 @@
-<?php
-include "connect.php";
-
-session_start(); // Start the PHP session
-
-// Check if the user is logged in and is an admin
-if (!isset($_SESSION['Type']) || $_SESSION['Type'] !== 'Admin') {
-    // If the user is not an admin, redirect them to the login page or show an error message
-    header("location: login.php");
-    exit(); // Stop script execution after redirecting
-}
-if (isset($_POST['submit'])) {
-    sanitizeXSS();
-    $CategoryName = $_POST['CategoryName'];
-    $sql = "insert into `catagory` (catagoryNo,catagoryName) values('','$CategoryName')";
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        // echo "Data Insert Successfully";
-        header('location:display.php');
-    } else {
-        die(mysqli_error($conn));
-    }
-
-}
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Category Books</title>
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
-    body {
-        padding: 0;
-        margin: 0;
-        background-image: url('myimg/library.jpg');
-    }
-    
-    .back-button {
-        padding: 0.5rem 1rem;
-        background-color:  #A0522D;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .back-button a {
-        color: white;
-        text-decoration: none;
-    }
-
-    h1 {
-        text-align: center;
-        color:white;
-    }
-
-    .form-group {
-        margin-bottom: 1rem;
-        margin-left: 35%;
-    }
-
-    label {
-        display: block;
-        font-weight: bold;
-        color:white;
-        font-size:25px;
-    }
-    button[type="submit"] {
-        padding: 0.5rem 1rem;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    button[type="submit"]:hover {
-        background-color:  #A0522D;
-    }
-    
-    input[type="text"]{
-        width: 50%;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-</style>
+        /* Your styles for this page */
+    </style>
 </head>
+
 <body>
-<button class="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
-    <h1>Add a Category</h1>
-    <form method="post" enctype="multipart/form-data">
-<div class="form-group">
-            <label for="CategoryName">Category Name:</label>
-            <input type="text" id="CategoryName" name="CategoryName" required>
-        </div>
-        <button name="submit" class="back-button" style="margin-left:47%;">Submit</button>
-</form>
+    <?php include 'templates/header.php';?>
+
+    <div class="content">
+        <?php
+        include 'connect.php';
+
+        // Check if the category is provided in the URL
+        if (isset($_GET['category'])) {
+            $category = $_GET['category'];
+
+            // Fetch and display books for the selected category
+            $query = "SELECT * FROM books WHERE category = '$category'";
+            $result = mysqli_query($conn, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $bookname = $row['BookName'];
+                    $img = $row['image'];
+
+                    echo '
+                    <div class="book-card">
+                        <img src="' . $img . '" alt="' . $bookname . '">
+                        <h3>' . $bookname . '</h3>
+                    </div>';
+                }
+            } else {
+                echo '<p>No books found for this category.</p>';
+            }
+        } else {
+            echo '<p>No category selected.</p>';
+        }
+        ?>
+    </div>
 </body>
+
 </html>
