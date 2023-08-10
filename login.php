@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
         if ($_SESSION['Type'] == "Admin") {
             header("location:display.php");
         } else {
-            header("location:Home.php");
+            header("location:index.php");
         }
     }
 }
@@ -32,19 +32,19 @@ if (isset($_POST['login'])) {
 ob_start();
 ?>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-image: url('assets/img/library.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center center;
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('assets/img/library.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 </style>
 <link rel="stylesheet" href="assets/css/admin.css">
 
@@ -66,19 +66,19 @@ ob_start();
 </div>
 
 <script>
-    var a;
+var a;
 
-    function pass() {
-        if (a == 1) {
-            document.getElementById('password').type = 'password';
-            document.getElementById('pass-icon').src = 'assets/img/download.png';
-            a = 0;
-        } else {
-            document.getElementById('password').type = 'text';
-            document.getElementById('pass-icon').src = 'assets/img/download.png';
-            a = 1;
-        }
+function pass() {
+    if (a == 1) {
+        document.getElementById('password').type = 'password';
+        document.getElementById('pass-icon').src = 'assets/img/download.png';
+        a = 0;
+    } else {
+        document.getElementById('password').type = 'text';
+        document.getElementById('pass-icon').src = 'assets/img/download.png';
+        a = 1;
     }
+}
 </script>
 <?php
 
