@@ -65,75 +65,8 @@ if (isset($_POST['submit'])) {
 }
 
 ob_start();
-
 ?>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        height: 100vh;
-        background-image: url('assets/img/library.jpg');
-        color: white;
-    }
-
-    .back-button {
-        padding: 0.5rem 1rem;
-        background-color: #A0522D;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .back-button a {
-        color: white;
-        text-decoration: none;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    .form-group {
-        margin-bottom: 1rem;
-        margin-left: 35%;
-    }
-
-    label {
-        display: block;
-        font-weight: bold;
-    }
-
-    input[type="text"],
-    textarea,
-    input[type="number"],
-    input[type="date"] {
-        width: 50%;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    select {
-        width: 52%;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    button[type="submit"] {
-        padding: 0.5rem 1rem;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    button[type="submit"]:hover {
-        background-color: #A0522D;
-    }
-</style>
-
+<link rel="stylesheet" href="assets/css/books.css">
 
 <button class="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
 <h1>Add a Book</h1>

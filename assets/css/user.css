@@ -1,0 +1,331 @@
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    background-image: url('assets/img/library.jpg');
+    background-size: cover;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 449px;
+}
+
+.header-content .info {
+    max-width: 70%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 100px;
+    font-size: 25px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    grid-area: text;
+    margin: 25px;
+
+}
+
+.header-content p {
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 30x;
+    font-family: "Times New Roman";
+}
+
+.div.info {
+    border: 5px solid;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    
+    }
+/* index */
+
+.learn-more-button {
+    background-color: #A0522D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+}
+.reset-container {
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    color: #FFDEAD;
+}
+
+.reset-container h2 {
+    margin-bottom: 20px;
+}
+
+.reset-container input[type="text"],
+.reset-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #FFDEAD;
+    color: #000;
+    /* Text color on input fields */
+}
+
+.reset-container .btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.reset-container .btn-container input[type="submit"] {
+    width: 48%;
+    background-color: #A0522D;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #FFF;
+    /* Text color on buttons */
+}
+
+.reset-container .btn-container input[type="submit"]:hover {
+    background-color: #FFDEAD;
+    color: #000;
+    /* Text color on buttons when hovering */
+}
+
+.reset-container a {
+    color: #FFDEAD;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.reset-container a:hover {
+    color: #666;
+}
+
+.registration-container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    color: #FFDEAD;
+}
+
+.registration-container h2 {
+    margin-bottom: 20px;
+}
+
+.registration-container input[type="text"],
+.registration-container input[type="password"],
+.registration-container input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.registration-container input[type="email"],
+.registration-container input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #FFDEAD;
+}
+
+#question {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #FFDEAD;
+}
+
+.registration-container label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.registration-container .gender-container {
+    text-align: left;
+}
+
+.registration-container .gender-container label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.registration-container input[type="submit"] {
+    width: 48%;
+    background-color: #A0522D;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.registration-container input[type="submit"]:hover {
+    background-color: #A0522D;
+}
+
+#back {
+    width: 48%;
+    background-color: #A0522D;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+#back a {
+    color: white;
+    text-decoration: none;
+}
+
+#answer,
+#dob,
+#username,
+#password {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #FFDEAD;
+}
+
+.login-container {
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    color: #FFDEAD;
+
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #FFDEAD;
+
+
+}
+
+.login-container .btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+
+.login-container .btn-container input[type="submit"] {
+    width: 48%;
+    background-color: #A0522D;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.login-container .btn-container input[type="submit"]:hover {
+    background-color: #FFDEAD;
+    color: #000;
+    /* Text color on buttons when hovering */
+}
+
+.login-container a {
+    color: #FFDEAD;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forget-container {
+    width: 300px; 
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    color: #FFDEAD;
+}
+
+.forget-container h2 {
+    margin-bottom: 20px;
+}
+
+.forget-container input[type="text"],
+.forget-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #FFDEAD;
+    color: #000;
+    /* Text color on input fields */
+}
+
+.forget-container .btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.forget-container .btn-container input[type="submit"] {
+    width: 48%;
+    background-color: #A0522D;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #FFF;
+    /* Text color on buttons */
+}
+
+.forget-container .btn-container input[type="submit"]:hover {
+    background-color: #FFDEAD;
+    color: #000;
+    /* Text color on buttons when hovering */
+}
+
+.forget-container a {
+    color: #FFDEAD;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forget-container a:hover {
+    color: #666;
+}

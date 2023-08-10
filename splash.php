@@ -3,31 +3,7 @@ include "core/connect.php";
 $title = 'Sikka Library';
 ob_start();
 ?>
-<style>
-    /* Add any necessary CSS styles here */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-        background-image: url('assets/img/library.jpg');
-    }
-
-    .splash-content {
-        text-align: center;
-        color: #FFDEAD;
-    }
-
-    .logo {
-        width: 150px;
-        height: 150px;
-        color: #FFDEAD;
-    }
-</style>
-
+<link rel="stylesheet" href="assets/css/body.css">
 
 <!-- Your splash page content goes here -->
 <div class="splash-content">
