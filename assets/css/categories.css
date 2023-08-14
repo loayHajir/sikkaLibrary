@@ -4,3 +4,40 @@
     background-image: url('../img/library.jpg');
     color: white;
 }
+/* category.php */
+.category-content{
+    font-family: Arial, sans-serif;
+    min-height: 100%;
+    background-image: url('../img/library.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.category-grid{
+    margin: 50px 0 0 60px;
+}
+.category-card{
+    width: 25%;
+}
+.category-card a{
+    text-decoration: none;
+    color: white;
+}
+.category-card img{
+    margin: 25px 0;
+}
+.category-selector select{
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+}
+.container-card{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
