@@ -1,6 +1,5 @@
 <?php
 include "core/connect.php";
-// include "core/admin.php";
 $title = 'Forgot your password?';
 
 if (isset($_POST['submit'])) {
@@ -12,9 +11,9 @@ if (isset($_POST['submit'])) {
     $result = mysqli_num_rows($query);
 
     if (!$result) {
-        echo "<p style='color: white;font-size:25px;'>incorrect name or password or answer. </p>";
+        echo "<p style='color: black;font-size:55px;'>incorrect name or password or answer. </p>";
     } else {
-        header("location: reset-pass.php");
+        header("location:reset-pass.php");
         // var_dump($result);
         if ($result > 0) {
             // Username, question, and answer are correct, store user ID in the session
@@ -30,40 +29,31 @@ if (isset($_POST['submit'])) {
 
 ob_start();
 ?>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-image: url('assets/img/library.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center center;
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
-<link rel="stylesheet" href="assets/css/admin.css">
+<link rel="stylesheet" href="assets/css/user.css">
 
-<div class="forget-container">
-    <form action="forget.php" method="post">
-        <h2>Forgot Password</h2>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+<div class="forget-content">
+    <div class="forget-box">
+        <form action="forget.php" method="post">
+            <h2>Forgot Password</h2>
+            <div class="form-group-forget">
+                 <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group-forget">
+                <label for="question">Security Question:</label>
+                <input type="text" id="question" name="question" required>
+            </div>
+            <div class="form-group-forget">
+                <label for="answer">Answer:</label><br>
+                <input type="text" id="answer" name="answer" required>
+            </div>
 
-        <label for="question">Security Question:</label>
-        <input type="text" id="question" name="question" required>
-
-        <label for="answer">Answer:</label>
-        <input type="text" id="answer" name="answer" required>
-
-        <div class="btn-container">
-            <input type="submit" value="Submit" name="submit">
-            <a href="login.php">Back to Login</a>
-        </div>
-    </form>
+            <div class="btn-container-forget">
+                <input type="submit" value="Submit" name="submit">
+                <a href="login.php">Back to Login</a>
+            </div>
+        </form>
+    </div>
 </div>
 <?php
 

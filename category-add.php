@@ -22,16 +22,18 @@ ob_start();
 ?>
 <link rel="stylesheet" href="assets/css/categories.css">
 
-<button class="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
-<h1>Add a Category</h1>
-<form method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label for="CategoryName">Category Name:</label>
-        <input type="text" id="CategoryName" name="CategoryName" required>
-    </div>
-    <button name="submit" class="back-button" style="margin-left:47%;">Submit</button>
-</form>
+<div class="add-category-content">
+    <a href="display.php" class="back-button">Back</a>
+    <h1 class="h1-add">Add a Category</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="CategoryName">Category Name:</label>
+            <input type="text" id="CategoryName" name="CategoryName" required>
+        </div>
+        <button name="submit" class="back-button" style="margin-left:47%;">Submit</button>
+    </form>
 
+</div>
 <?php
 
 $page = ob_get_clean();

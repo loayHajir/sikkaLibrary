@@ -15,12 +15,13 @@ li {
     float: right;
 }
 
-li a {
+nav li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 20px;
 }
 
 li a:hover:not(.active) {
@@ -40,6 +41,6 @@ li a:hover:not(.active) {
 h1{
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     margin: 20px;
 }

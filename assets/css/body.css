@@ -1,4 +1,4 @@
-body {
+.splash-container {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     display: flex;
@@ -6,7 +6,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-image: url('assets/img/library.jpg');
+    background-image: url('../img/library.jpg ');
 }
 
 .splash-content {
@@ -14,7 +14,7 @@ body {
     color: #FFDEAD;
 }
 
-.logo {
+.splash-img {
     width: 150px;
     height: 150px;
     color: #FFDEAD;

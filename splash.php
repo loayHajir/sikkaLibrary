@@ -4,11 +4,11 @@ $title = 'Sikka Library';
 ob_start();
 ?>
 <link rel="stylesheet" href="assets/css/body.css">
-
+<div class="splash-container">
 <!-- Your splash page content goes here -->
 <div class="splash-content">
     <h1>Welcome to Sikka library!</h1>
-    <img src="assets/img/logo.jpg" alt="Logo" class="logo">
+    <img src="assets/img/logo.jpg" alt="Logo" class="splash-img">
     <p>Loading...</p>
 </div>
 <!-- JavaScript code to handle the loading effect and redirect to the main page -->
@@ -17,9 +17,10 @@ ob_start();
     const splashDelay = 3000; // 3 seconds
     // Wait for the specified delay and then redirect to another page
     setTimeout(() => {
-        window.location.href = "index.php"; // Replace with the path to your main page
+        window.location.href = "login.php"; // Replace with the path to your main page
     }, splashDelay);
 </script>
+</div>
 <?php
 
 $page = ob_get_clean();

@@ -1,7 +1,6 @@
 <?php
 
 include "core/connect.php";
-include "core/admin.php";
 $title = 'Categories';
 
 ob_start();

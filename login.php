@@ -20,10 +20,10 @@ if (isset($_POST['login'])) {
 
         $_SESSION['Type'] = $row['Type'];
         $_SESSION['user_id'] = $row['ID'];
-
         if ($_SESSION['Type'] == "Admin") {
             header("location:display.php");
         } else {
+
             header("location:index.php");
         }
     }
@@ -31,54 +31,46 @@ if (isset($_POST['login'])) {
 
 ob_start();
 ?>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('assets/img/library.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-</style>
-<link rel="stylesheet" href="assets/css/admin.css">
+<link rel="stylesheet" href="assets/css/user.css">
+<link rel="stylesheet" href="assets/css/reset.css">
 
-<div class="login-container">
-    <h2>Login Form</h2>
-    <form action="login.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <a href="forget.php">Forgot Password?</a>
-        <br>
-        <div class="btn-container">
-            <input type="submit" value="Login" name="login">
-            <input type="submit" value="Registration" formaction="register.php">
-        </div>
-    </form>
+<div class="login-content">
+    <div class="login-box">
+        <div class="login-box-content">
+        <h2>Login Form</h2>
+        <form action="login.php" method="post">
+        <div class="form-group-login">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-group-login">
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br><br>
+                <a href="forget.php">Forgot Password?</a>
+            </div>
+            <div class="btn-container-login">
+                <input type="submit" value="Login" name="login">
+                <input type="submit" value="Registration" formaction="register.php">
+            </div>
+        </form>
+        </div>  
+    </div>
 </div>
 
 <script>
-var a;
+    var a;
 
-function pass() {
-    if (a == 1) {
-        document.getElementById('password').type = 'password';
-        document.getElementById('pass-icon').src = 'assets/img/download.png';
-        a = 0;
-    } else {
-        document.getElementById('password').type = 'text';
-        document.getElementById('pass-icon').src = 'assets/img/download.png';
-        a = 1;
+    function pass() {
+        if (a == 1) {
+            document.getElementById('password').type = 'password';
+            document.getElementById('pass-icon').src = 'assets/img/download.png';
+            a = 0;
+        } else {
+            document.getElementById('password').type = 'text';
+            document.getElementById('pass-icon').src = 'assets/img/download.png';
+            a = 1;
+        }
     }
-}
 </script>
 <?php
 

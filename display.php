@@ -5,60 +5,59 @@ include "core/admin.php";
 $title = 'Book Table';
 ob_start();
 ?>
+
 <link rel="stylesheet" href="assets/css/owner.css">
-<style>
+<link rel="stylesheet" href="assets/css/header.css">
+<div class="display-content">
+    <div class="button-container">
+        <a href="book-add.php" class="add-book-btn">Add Book</a>
+        <a href="category-add.php" class="add-category-btn">Add Category</a>
+    </div>
 
-</style>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Language</th>
+                <th>Date of publication</th>
+                <th>Available</th>
+                <th></th>
+            </tr>
+        </thead>
 
-<div class="button-container">
-    <a href="book-add.php" id="button add-button">Add Book</a>
-    <a id="logout" href="logout.php? logout=' . $id . '" class="button text-light">Logout</a>
-</div>
-<div class="buttoncontainer">
-    <a href="category-add.php" class="button" id="add-button">Add Category</a>
-</div>
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Book Name</th>
-            <th>Description</th>
-            <th>Language</th>
-            <th>Available</th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <tbody id="table-body">
-        <?php
-        $SQL = "select * from `books`";
-        $result = mysqli_query($conn, $SQL);
-        if ($result) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $id = $row['ID'];
-                $bookname = $row['BookName'];
-                $desc = $row['Description'];
-                $lang = $row['Language'];
-                $available = $row['Available'];
-                echo ' 
+        <tbody id="table-body">
+            <?php
+            $SQL = "select * from `books`";
+            $result = mysqli_query($conn, $SQL);
+            if ($result) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $id = $row['ID'];
+                    $bookname = $row['BookName'];
+                    $desc = $row['Description'];
+                    $dop = $row['dop'];
+                    $lang = $row['Language'];
+                    $available = $row['Available'];
+                    echo ' 
 <tr> 
 <th scope="row">' . $id . '</th>
 <td>' . $bookname . '</td>
-<td>' . $desc . '</td>
 <td>' . $lang . '</td>
+<td>' . $dop . '</td>
 <td>' . $available . '</td>
 <td> 
-<a class="btn btn-primary" href="book-update.php? updateid=' . $id . '" class="text-light">Update</a>
+<a class="update-btn" href="book-update.php? updateid=' . $id . '" class="text-light">Update</a>
 
-<a class="btn btn-danger" onclick="return msg()" href="book-delete.php? deleteid=' . $id . '"
+<a class="delete-btn" onclick="return msg()" href="book-delete.php? deleteid=' . $id . '"
 class="text-light">delete</a>
 </td>
 </tr>';
+                }
             }
-        }
-        ?>
-    </tbody>
-</table>
+            ?>
+        </tbody>
+    </table>
+</div>
 
 <script>
     function msg() {
@@ -76,5 +75,5 @@ class="text-light">delete</a>
 <?php
 
 $page = ob_get_clean();
-
+include 'templates/header.php';
 include 'templates/html.php';

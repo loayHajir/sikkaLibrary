@@ -1,6 +1,6 @@
-body {
+.book-content {
     font-family: Arial, sans-serif;
-    height: 100vh;
+    height: 100%;
     background-image: url('../img/library.jpg');
     color: white;
 }
@@ -10,49 +10,48 @@ body {
     color: white;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
-}
-.back-button a {
-    color: white;
     text-decoration: none;
+    position: relative;
+    top: 40px;
+    left: 15px;
 }
-h1 {
+.update-button,.add-button{
+    padding: 0.5rem 1.5rem;
+    background-color: #A0522D;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left:50%
+}
+.h1-update,.h1-add{
     text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 50px 0;
 }
 
 .form-group {
     margin-bottom: 1rem;
     margin-left: 35%;
 }
-label {
+.form-group label {
     display: block;
     font-weight: bold;
 }
-input[type="text"],
-textarea,
-input[type="number"],
-input[type="date"] {
+.form-group input[type="text"],
+.form-group #description,
+.form-group input[type="number"],
+.form-group input[type="date"] {
     width: 50%;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-select {
+#language {
     width: 52%;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-button[type="submit"] {
-    padding: 0.5rem 1rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #A0522D;
-}

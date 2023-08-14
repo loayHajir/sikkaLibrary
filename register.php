@@ -25,157 +25,61 @@ if (isset($_POST['Register'])) {
 }
 ob_start();
 ?>
+<link rel="stylesheet" href="assets/css/user.css">
+<div class="registration-content">
+    <div class="registration-box">
+        <h2>Registration Form</h2>
+        <form method="post">
+            <div class="form-group-forget">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group-forget">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" onblur="chkPassword()">
+            </div>
+            <div class="form-group-forget">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" onblur="checkNum()">
+            </div>
+            <div class="form-group-forget">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group-forget">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" onblur="age()" required>
+            </div>
+            <div class="form-group-forget">
+                <label for="question">Select a question:</label>
+                <select id="question" name="question" required>
+                    <option value="" disabled selected>Select a question</option>
+                    <option value="What is your favorite color">What is your favorite color</option>
+                    <option value="What is your favorite movie">What is your favorite movie</option>
+                    <option value="What city were you born in">What city were you born in</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="form-group-forget">
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        text-align: center;
-        background-image: url('assets/img/library.jpg');
-    }
-
-    .registration-container {
-        width: 400px;
-        padding: 20px;
-        border-radius: 8px;
-        background-color: rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 20px;
-        color: #FFDEAD;
-        margin-left: 440px;
-    }
-
-    .registration-container h2 {
-        margin-bottom: 20px;
-    }
-
-    .registration-container input[type="text"],
-    .registration-container input[type="password"],
-    .registration-container input[type="date"] {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    .registration-container input[type="email"],
-    .registration-container input[type="tel"] {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #FFDEAD;
-    }
-
-    #question {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-
-    }
-
-    .registration-container label {
-        display: block;
-        margin-bottom: 5px;
-        text-align: left;
-    }
-
-    .registration-container .gender-container {
-        text-align: left;
-    }
-
-    .registration-container .gender-container label {
-        display: inline-block;
-        margin-right: 10px;
-    }
-
-    .registration-container input[type="submit"] {
-        width: 48%;
-        background-color: #A0522D;
-        padding: 14px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        color: white;
-    }
-
-    .registration-container input[type="submit"]:hover {
-        background-color: #A0522D;
-    }
-
-    #back {
-        width: 48%;
-        background-color: #A0522D;
-        padding: 14px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-
-    }
-
-    #back a {
-        color: white;
-        text-decoration: none;
-    }
-
-    #answer,
-    #dob,
-    #username,
-    #password {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #FFDEAD;
-    }
-</style>
-
-<div class="registration-container">
-    <h2>Registration Form</h2>
-    <form method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" onblur="chkPassword()">
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" onblur="checkNum()">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" onblur="age()" required>
-
-        <label for="question">Select a question:</label>
-        <select id="question" name="question" required>
-            <option value="" disabled selected>Select a question</option>
-            <option value="What is your favorite color">What is your favorite color</option>
-            <option value="What is your favorite movie">What is your favorite movie</option>
-            <option value="What city were you born in">What city were you born in</option>
-            <!-- Add more options as needed -->
-        </select>
-
-        <label for="answer">Answer:</label>
-        <input type="text" id="answer" name="answer" required>
-        <div class="gender-container">
-            <label>Gender:</label>
-            <label for="male">Male</label>
-            <input type="radio" id="male" name="gender" value="Male">
-            <label for="female">Female</label>
-            <input type="radio" id="female" name="gender" value="Female">
-        </div>
-        <input type="submit" value="Register" name="Register">
-        <button id="back" onclick="history.back()"><a href="login.php">Back</a></button>
-
-    </form>
+                <label for="answer">Answer:</label>
+                <input type="text" id="answer" name="answer" required>
+            </div>
+            <div class="form-group-forget">
+                <div class="gender-container">
+                    <label>Gender:</label>
+                    <label for="male">Male</label>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="female">Female</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                </div>
+            </div>
+            <div class="btn-container-forget">
+                <input type="submit" value="Register" name="Register">
+                <a href="login.php">Back to login</a>
+            </div>
+        </form>
+    </div>
 </div>
 
 

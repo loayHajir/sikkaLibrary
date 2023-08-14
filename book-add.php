@@ -67,58 +67,61 @@ if (isset($_POST['submit'])) {
 ob_start();
 ?>
 <link rel="stylesheet" href="assets/css/books.css">
+<link rel="stylesheet" href="assets/css/reset.css">
 
-<button class="back-button" onclick="history.back()"><a href="display.php">Back</a></button>
-<h1>Add a Book</h1>
-<form method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label for="bookName">Book Name:</label>
-        <input type="text" id="bookName" name="bookName" required>
-    </div>
-    <div class="form-group">
-        <label for="language">Language:</label>
-        <select id="language" name="language" required>
-            <option value="English">English</option>
-            <option value="Arabic">Arabic</option>
-            <option value="French">French</option>
-            <option value="Spanish">Spanish</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required>
-    </div>
-    <div class="form-group">
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author" required>
-    </div>
-    <div class="form-group">
-        <label for="pageNo">Number Of Page:</label>
-        <input type="number" id="pageNo" name="pageNO" required>
-    </div>
-    <div class="form-group">
-        <label for="dop">Date Of Publication:</label>
-        <input type="date" id="dop" name="dop" required>
-    </div>
-    <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" rows="5" required></textarea>
-    </div>
-    <div class="form-group">
-        Availability:
-        <input type="checkbox" id="availability" name="availability" value="1">
-    </div>
-    <div class="form-group">
-        pdf:
-        <input type="file" id="pdf" name="pdf">
-        img:
-        <input type="file" id="image" name="image">
-    </div>
-    <br>
-    <!-- <div class="form-group"> -->
-    <button name="submit" class="back-button" style="margin-left:47%;">Submit</button>
-    <!-- </div> -->
-</form>
+<div class="book-content">
+    <a href="display.php" class="back-button">Back</a>
+    <h1 class="h1-add">Add a Book</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="bookName">Book Name:</label>
+            <input type="text" id="bookName" name="bookName" required>
+        </div>
+        <div class="form-group">
+            <label for="language">Language:</label>
+            <select id="language" name="language" required>
+                <option value="English">English</option>
+                <option value="Arabic">Arabic</option>
+                <option value="French">French</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <div class="form-group">
+            <label for="pageNo">Number Of Page:</label>
+            <input type="number" id="pageNo" name="pageNO" required>
+        </div>
+        <div class="form-group">
+            <label for="dop">Date Of Publication:</label>
+            <input type="date" id="dop" name="dop" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+            Availability:
+            <input type="checkbox" id="availability" name="availability" value="1">
+        </div>
+        <div class="form-group">
+            pdf:
+            <input type="file" id="pdf" name="pdf">
+            img:
+            <input type="file" id="image" name="image">
+        </div>
+        <br>
+        <!-- <div class="form-group"> -->
+        <button name="submit" class="add-button">Add</button>
+        <!-- </div> -->
+    </form>
+</div>
 <?php
 
 $page = ob_get_clean();

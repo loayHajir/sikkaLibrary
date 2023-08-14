@@ -1,6 +1,5 @@
 <?php
 include "core/connect.php";
-// include "core/admin.php";
 $title = 'Reset Password';
 
 if (!isset($_SESSION['user_id'])) {
@@ -38,99 +37,26 @@ if (isset($_POST['submit'])) {
 
 ob_start();
 ?>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-image: url('assets/img/library.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center center;
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .reset-container {
-        width: 300px;
-        padding: 20px;
-        border-radius: 8px;
-        background-color: rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 20px;
-        color: #FFDEAD;
-    }
-
-    .reset-container h2 {
-        margin-bottom: 20px;
-    }
-
-    .reset-container input[type="text"],
-    .reset-container input[type="password"] {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #FFDEAD;
-        color: #000;
-        /* Text color on input fields */
-    }
-
-    .reset-container .btn-container {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-    }
-
-    .reset-container .btn-container input[type="submit"] {
-        width: 48%;
-        background-color: #A0522D;
-        padding: 14px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        color: #FFF;
-        /* Text color on buttons */
-    }
-
-    .reset-container .btn-container input[type="submit"]:hover {
-        background-color: #FFDEAD;
-        color: #000;
-        /* Text color on buttons when hovering */
-    }
-
-    .reset-container a {
-        color: #FFDEAD;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .reset-container a:hover {
-        color: #666;
-    }
-</style>
-<link rel="stylesheet" href="assets/css/admin.css">
+<link rel="stylesheet" href="assets/css/user.css">
 
 <div class="reset-container">
-    <form action="resetpass.php" method="post">
-        <h2>Reset Password</h2>
-        <label for="newPassword">New Password:</label>
-        <input type="password" id="newPassword" name="newPassword" required>
-
-        <label for="confirmPassword">Confirm New Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
-
-        <div class="btn-container">
-            <input type="submit" value="Reset Password" name="submit">
-            <a href="login.php">Back to Login</a>
-        </div>
-    </form>
+    <div class="reset-box">
+        <form action="resetpass.php" method="post">
+            <h1>Reset Password</h1>
+            <div class="form-group-forget">
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <div class="form-group-forget">
+                <label for="confirmPassword">Confirm New Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div class="btn-container-forget">
+                <input type="submit" value="Reset Password" name="submit">
+                <a href="login.php">Back to Login</a>
+            </div>
+        </form>
+    </div>
 </div>
 <?php
 
