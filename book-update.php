@@ -64,8 +64,8 @@ ob_start();
             </select>
         </div>
         <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required value=<?php echo $mytitle; ?>>
+            <!-- <label for="title">Title:</label> -->
+            <!-- <input type="text" id="title" name="title" required value=<?php echo $mytitle; ?>> -->
         </div>
         <div class="form-group">
             <label for="author">Author:</label>

@@ -54,4 +54,44 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+/* book decription */
+.book-container {
+    max-width: 800px;
+    margin: 30px auto;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color:#A0522D;
+}
 
+.book-title {
+    font-size: 24px;
+    font-weight: bold;
+    color:white;
+    direction: rtl;
+}
+
+.book-author {
+    font-size: 16px;
+    font-style: italic;
+    color: white;
+    direction: rtl;
+    font-weight: bold;
+}
+
+.book-description {
+    font-size: 18px;
+    margin-top: 10px;
+    color: white;
+    direction: rtl;
+    font-weight: bold;
+}
+
+.book-cover {
+    max-width: 200px;
+    height: 250px;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
