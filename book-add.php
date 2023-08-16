@@ -87,8 +87,8 @@ ob_start();
             </select>
         </div>
         <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required>
+            <!-- <label for="title">Title:</label> -->
+            <!-- <input type="text" id="title" name="title" required> -->
         </div>
         <div class="form-group">
             <label for="author">Author:</label>
