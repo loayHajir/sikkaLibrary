@@ -26,17 +26,18 @@ ob_start();
     </div>
     <div class="container-card">
         <?php
+        
         $SQL = "select * from `catagory`";
         $result = mysqli_query($conn, $SQL);
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $catName = $row['catagoryName'];
-
+                $catimg = $row['catagoryImg'];
                 echo ' 
                     <div class="category-grid">
                         <div class="category-card">
                             <a href="category_books.php?category=history">
-                                <img src="assets/img/history.jpg" alt="History">
+                                <img src='.$catimg.' alt='.$catName.'>
                                 <h3>' . $catName . '</h3>
                             </a>
                     </div>

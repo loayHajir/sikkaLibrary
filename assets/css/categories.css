@@ -30,6 +30,7 @@
 }
 .category-card img{
     margin: 25px 0;
+    /* width: 200%; */
 }
 .category-selector select{
     padding: 0.7rem 1.5rem;
@@ -40,4 +41,5 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    
 }

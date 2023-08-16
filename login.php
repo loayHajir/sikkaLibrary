@@ -37,40 +37,40 @@ ob_start();
 <div class="login-content">
     <div class="login-box">
         <div class="login-box-content">
-        <h2>Login Form</h2>
-        <form action="login.php" method="post">
-        <div class="form-group-login">
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username">
-            </div>
-            <div class="form-group-login">
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password"><br><br>
-                <a href="forget.php">Forgot Password?</a>
-            </div>
-            <div class="btn-container-login">
-                <input type="submit" value="Login" name="login">
-                <input type="submit" value="Registration" formaction="register.php">
-            </div>
-        </form>
-        </div>  
+            <h2>Login Form</h2>
+            <form action="login.php" method="post">
+                <div class="form-group-login">
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="form-group-login">
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br><br>
+                    <a href="forget.php">Forgot Password?</a>
+                </div>
+                <div class="btn-container-login">
+                    <input type="submit" value="Login" name="login">
+                    <input type="submit" value="Registration" formaction="register.php">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
 <script>
-    var a;
+var a;
 
-    function pass() {
-        if (a == 1) {
-            document.getElementById('password').type = 'password';
-            document.getElementById('pass-icon').src = 'assets/img/download.png';
-            a = 0;
-        } else {
-            document.getElementById('password').type = 'text';
-            document.getElementById('pass-icon').src = 'assets/img/download.png';
-            a = 1;
-        }
+function pass() {
+    if (a == 1) {
+        document.getElementById('password').type = 'password';
+        document.getElementById('pass-icon').src = 'assets/img/download.png';
+        a = 0;
+    } else {
+        document.getElementById('password').type = 'text';
+        document.getElementById('pass-icon').src = 'assets/img/download.png';
+        a = 1;
     }
+}
 </script>
 <?php
 
