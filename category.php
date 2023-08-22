@@ -14,7 +14,7 @@ ob_start();
         $sqlCat = "select catagoryName from `catagory`";
         $resultCat = mysqli_query($conn, $sqlCat);
         echo '<select onchange="showBooks(this.value)">';
-        echo '<option value="">Select a Category</option>';
+        echo '<option value="" >Select a Category</option>';
         if ($resultCat) {
             while ($row = mysqli_fetch_assoc($resultCat)) {
                 $catNameSelect = $row['catagoryName'];
