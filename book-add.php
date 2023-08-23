@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
     $author = $_POST['author'];
     $pageno = $_POST['pageNO'];
     $dop = $_POST['dop'];
+    // $categoryName = $_POST['category'];
     $img = $_FILES['image']['name'];
     $available = isset($_POST['availability']) ? $_POST['availability'] : 0;
     $pdf = $_FILES['pdf']['name']; // Get the name of the uploaded pdf file
@@ -85,6 +86,22 @@ ob_start();
                 <option value="French">French</option>
                 <option value="Spanish">Spanish</option>
             </select>
+        </div>
+        <div class="form-group">
+            <?php
+            $sqlCat = "select catagoryNo, catagoryName from `catagory`";
+            $resultCat = mysqli_query($conn, $sqlCat);
+            echo '<label for="category">Category Name</label>';
+            echo '<select id="category" name="category" required>';
+            echo '<option value="" disabled>Select a Category</option>';
+            if ($resultCat) {
+                while ($row = mysqli_fetch_assoc($resultCat)) {
+                    $catNameSelect = $row['catagoryName'];
+                    echo '<option value=' . $row['catagoryNo'] . '>' . $catNameSelect . '</option>';
+                }
+            }
+            echo '</select>'
+                ?>
         </div>
         <div class="form-group">
             <!-- <label for="title">Title:</label> -->

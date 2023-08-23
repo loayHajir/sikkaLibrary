@@ -29,7 +29,7 @@ ob_start();
 <div class="registration-content">
     <div class="registration-box">
         <h2>Registration Form</h2>
-        <form method="post">
+        <form method="post" onsubmit="return chkPassword() && checkNum() && age();">
             <div class="form-group-forget">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -84,16 +84,16 @@ ob_start();
 
 
 <script>
-    var pass = document.getElementById("password");
+var pass = document.getElementById("password");
 
-    function chkPassword() {
-        if (pass.value.length < 6) {
-            alert("To be secure! pleaase enter at least 6 chracters");
-            pass.focus();
-            return false;
-        }
+function chkPassword() {
+    if (pass.value.length < 6) {
+        alert("To be secure! pleaase enter at least 6 chracters");
+        pass.focus();
+        return false;
     }
-    var numInput = document.getElementById("phone");
+}
+var numInput = document.getElementById("phone");
 
     function checkNum() {
         if (isNaN(numInput.value)) {
@@ -107,18 +107,23 @@ ob_start();
             return false;
         }
     }
-
-    function age() {
-        var dateField = document.getElementById("dob").value;
-        var inputDate = new Date(dateField);
-        var currentDate = new Date();
-        var age = currentDate.getFullYear() - inputDate.getFullYear();
-        if (inputDate > currentDate) {
-            alert("Invalid Date, Please Enter a valid date");
-            dobb.focus();
-            return false;
-        }
+    if (numInput.value.length < 8 || numInput.value.length > 8) {
+        alert("Please enter 8 number");
+        numInput.focus();
+        return false;
     }
+
+function age() {
+    var dateField = document.getElementById("dob").value;
+    var inputDate = new Date(dateField);
+    var currentDate = new Date();
+    var age = currentDate.getFullYear() - inputDate.getFullYear();
+    if (inputDate > currentDate) {
+        alert("Invalid Date, Please Enter a valid date");
+        dateField.focus();
+        return false;
+    }
+}
 </script>
 <?php
 
