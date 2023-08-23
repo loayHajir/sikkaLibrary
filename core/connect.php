@@ -19,3 +19,8 @@ function sanitizeXSS()
     $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
     $_REQUEST = (array) $_POST + (array) $_GET + (array) $_REQUEST;
 }
+
+function isAdmin()
+{
+    return isset($_SESSION['Type']) && $_SESSION['Type'] == 'Admin';
+}

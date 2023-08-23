@@ -1,7 +1,7 @@
 <?php
 
 include "core/connect.php";
-include "core/admin.php";
+// include "core/admin.php";
 $title = 'Book Table';
 ob_start();
 ?>
@@ -10,8 +10,10 @@ ob_start();
 <link rel="stylesheet" href="assets/css/header.css">
 <div class="display-content">
     <div class="button-container">
+        <?php if (isAdmin()) { ?>
         <a href="book-add.php" class="add-book-btn">Add Book</a>
         <a href="category-add.php" class="add-category-btn">Add Category</a>
+        <?php } ?>
     </div>
 
     <table>
@@ -29,6 +31,9 @@ ob_start();
         <tbody id="table-body">
             <?php
             $SQL = "select * from `books`";
+            if (isset($_GET['category'])) {
+                $SQL .= ' where CatagoryNo = ' . $_GET['category'];
+            }
             $result = mysqli_query($conn, $SQL);
             if ($result) {
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -45,13 +50,15 @@ ob_start();
 <td>' . $lang . '</td>
 <td>' . $dop . '</td>
 <td>' . $available . '</td>
-<td> 
+
+'
+                        . (isAdmin() ? '<td> 
 <a class="update-btn" href="book-update.php? updateid=' . $id . '" class="text-light">Update</a>
 
 <a class="delete-btn" onclick="return msg()" href="book-delete.php? deleteid=' . $id . '"
 class="text-light">delete</a>
-</td>
-</tr>';
+</td>' : '')
+                        . '</tr>';
                 }
             }
             ?>
@@ -60,16 +67,16 @@ class="text-light">delete</a>
 </div>
 
 <script>
-    function msg() {
+function msg() {
 
-        var confirmation = confirm("Are you want to delete?");
-        if (confirmation) {
-            alert("deleted successfully!");
-        } else {
-            return false;
-        }
-
+    var confirmation = confirm("Are you want to delete?");
+    if (confirmation) {
+        alert("deleted successfully!");
+    } else {
+        return false;
     }
+
+}
 </script>
 
 <?php

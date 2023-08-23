@@ -29,7 +29,7 @@ ob_start();
 <div class="registration-content">
     <div class="registration-box">
         <h2>Registration Form</h2>
-        <form method="post" onsubmit="return chkPassword() && checkNum() && age();">
+        <form method="post" id="register-form">
             <div class="form-group-forget">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -40,7 +40,7 @@ ob_start();
             </div>
             <div class="form-group-forget">
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone">
+                <input type="tel" id="phone" name="phone" required>
             </div>
             <div class="form-group-forget">
                 <label for="email">Email:</label><br>
@@ -84,6 +84,7 @@ ob_start();
 
 
 <script>
+var register_form = document.getElementById('register-form');
 var pass = document.getElementById("password");
 
 function chkPassword() {
@@ -92,6 +93,7 @@ function chkPassword() {
         pass.focus();
         return false;
     }
+    return true;
 }
 var numInput = document.getElementById("phone");
 
@@ -106,19 +108,32 @@ function checkNum() {
         numInput.focus();
         return false;
     }
+    return true;
 }
 
 function age() {
-    var dateField = document.getElementById("dob").value;
-    var inputDate = new Date(dateField);
+    var dateField = document.getElementById("dob");
+    var inputDate = new Date(dateField.value);
     var currentDate = new Date();
     var age = currentDate.getFullYear() - inputDate.getFullYear();
+    console.log(inputDate, currentDate);
     if (inputDate > currentDate) {
         alert("Invalid Date, Please Enter a valid date");
         dateField.focus();
         return false;
     }
+    return true;
 }
+
+var validate = function(e) {
+
+    if (chkPassword() && checkNum() && age()) {
+        return true;
+    } else {
+        e.preventDefault();
+    }
+}
+register_form.addEventListener('submit', validate);
 </script>
 <?php
 

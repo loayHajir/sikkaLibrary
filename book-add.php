@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     $author = $_POST['author'];
     $pageno = $_POST['pageNO'];
     $dop = $_POST['dop'];
-    // $categoryName = $_POST['category'];
+    $categoryNo = $_POST['category'];
     $img = $_FILES['image']['name'];
     $available = isset($_POST['availability']) ? $_POST['availability'] : 0;
     $pdf = $_FILES['pdf']['name']; // Get the name of the uploaded pdf file
@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
     } else {
         die("Error uploading the file.");
     }
-    $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF,title,author,pageNum,dop,image) values('','$bookName','$des','$lang','$available','$rowpdf','$title','$author','$pageno','$dop','$rowimg')";
+    $sql = "insert into `books` (ID,BookName,Description,Language,Available,PDF,title,author,pageNum,dop,image,CatagoryNo) values('','$bookName','$des','$lang','$available','$rowpdf','$title','$author','$pageno','$dop','$rowimg','$categoryNo')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         // echo "Data Insert Successfully";
@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
 ob_start();
 ?>
 <link rel="stylesheet" href="assets/css/books.css">
-<link rel="stylesheet" href="assets/css/reset.css">
+<!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
 
 <div class="book-content">
     <a href="display.php" class="back-button">Back</a>
