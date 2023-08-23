@@ -36,11 +36,14 @@ ob_start();
             </div>
             <div class="form-group-forget">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" onsubmit="chkPassword()">
             </div>
             <div class="form-group-forget">
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <<<<<<< HEAD <input type="tel" id="phone" name="phone" required>
+                    =======
+                    <input type="tel" id="phone" name="phone" onsubmit="checkNum()">
+                    >>>>>>> e7e86b5885cfe54249c6ccc59c1174b1695f3016
             </div>
             <div class="form-group-forget">
                 <label for="email">Email:</label><br>
@@ -48,7 +51,7 @@ ob_start();
             </div>
             <div class="form-group-forget">
                 <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob" required>
+                <input type="date" id="dob" name="dob" onsubmit="age()" required>
             </div>
             <div class="form-group-forget">
                 <label for="question">Select a question:</label>
@@ -108,8 +111,9 @@ function checkNum() {
         numInput.focus();
         return false;
     }
-    return true;
+    return true
 }
+
 
 function age() {
     var dateField = document.getElementById("dob");

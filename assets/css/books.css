@@ -64,7 +64,7 @@
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color:#A0522D;
+    background-color:#A0522D; 
 }
 
 .book-title {
@@ -76,7 +76,7 @@
 
 .book-author {
     font-size: 16px;
-    font-style: italic;
+    font-style: italic; 
     color: white;
     direction: rtl;
     font-weight: bold;
@@ -96,4 +96,4 @@
     display: block;
     margin: 20px auto;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
+} 
