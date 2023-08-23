@@ -36,11 +36,11 @@ ob_start();
             </div>
             <div class="form-group-forget">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" onblur="chkPassword()">
+                <input type="password" id="password" name="password" onsubmit="chkPassword()">
             </div>
             <div class="form-group-forget">
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" onblur="checkNum()">
+                <input type="tel" id="phone" name="phone" onsubmit="checkNum()">
             </div>
             <div class="form-group-forget">
                 <label for="email">Email:</label><br>
@@ -48,7 +48,7 @@ ob_start();
             </div>
             <div class="form-group-forget">
                 <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob" onblur="age()" required>
+                <input type="date" id="dob" name="dob" onsubmit="age()" required>
             </div>
             <div class="form-group-forget">
                 <label for="question">Select a question:</label>
@@ -102,7 +102,7 @@ ob_start();
             return false;
         }
         if (numInput.value.length < 8 || numInput.value.length > 8) {
-            alert("Please enter 8 number")
+            alert("Please enter 8 number");
             numInput.focus();
             return false;
         }
