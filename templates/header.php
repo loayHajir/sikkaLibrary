@@ -12,11 +12,13 @@
                 } else {
                     echo '<li><a href="login.php">Login</a></li>';
                 }
-                ?> 
+                ?>
+                <li><a href="display.php">Books</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
                 <li><a href="category.php">Category</a></li>
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="index.php">Home</a></li>
+
             </ul>
         </div>
     </nav>

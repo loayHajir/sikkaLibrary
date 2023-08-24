@@ -21,6 +21,12 @@ if (isset($_POST['submit'])) {
     $rowcatg = '';
     if ($categoryimg && move_uploaded_file($_FILES["CategoryImg"]["tmp_name"], $targetFileImg)) {
         $rowcatg = $targetFileImg;
+        crop_and_resize_image_gd($targetFileImg, $targetFileImg, 200, 200);
+        // $im_php = imagecreatefromjpeg($targetFileImg);
+        // $im_php = imagescale($im_php, 640);
+        // $new_height = imagesy($im_php);
+        // $new_name = str_replace('-1920x1080', '-640x' . $new_height, basename($image));
+        // imagejpeg($im_php, $targetFileImg);
     } else {
         die("Error uploading the file.");
     }
