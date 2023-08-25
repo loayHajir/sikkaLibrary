@@ -7,7 +7,7 @@ ob_start();
 ?>
 <link rel="stylesheet" href="assets/css/categories.css">
 <link rel="stylesheet" href="assets/css/header.css">
-<img src="assets/img/library.jpg" alt="" id="lib">
+<!-- <img src="assets/img/library.jpg" alt="" id="lib"> -->
 <div class="category-content">
     <!-- <h1>Browse Book Categories</h1>
     <div class="category-selector">

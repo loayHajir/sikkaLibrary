@@ -5,25 +5,26 @@
     color: white;
 }
 /* category.php */
-#lib{
+/* #lib{
     width: 100%;
     min-height: 200vh;
     position: relative;
-}
+} */
 .category-content{
     font-family: Arial, sans-serif;
     min-height: 100%;
-    /* background-image: url('../img/library.jpg');
-    background-size: cover;
-    background-repeat: no-repeat; */
+    background-image: url('../img/library.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    position: absolute;
-    top: 30px;
+    background-attachment: fixed;
+    /* position: absolute; */
+    /* top: 30px; */
 }
 .category-grid{
     margin: 40px 0 0 60px;
