@@ -7,6 +7,7 @@ ob_start();
 ?>
 <link rel="stylesheet" href="assets/css/categories.css">
 <link rel="stylesheet" href="assets/css/header.css">
+<img src="assets/img/library.jpg" alt="" id="lib">
 <div class="category-content">
     <!-- <h1>Browse Book Categories</h1>
     <div class="category-selector">
@@ -39,7 +40,7 @@ ob_start();
                         <div class="category-card">
                             <a href="display.php?category=' . $catno . '">
                                 <img src=' . $catimg . ' alt=' . $catName . '>
-                                <h3>' . $catName . '</h3>
+                                <h1>' . $catName . '</h1>
                             </a>
                     </div>
                         </div>';
