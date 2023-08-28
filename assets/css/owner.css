@@ -4,8 +4,6 @@
     height: 100%;
     background-image: url('../img/library.jpg');
     color: white;
-    margin: 0;
-    padding: 0;
 }
 .update-btn,.delete-btn {
     padding: 0.5rem 1rem;
@@ -50,7 +48,5 @@
     display: flex;
     justify-content: space-evenly;
     position: absolute;
-    bottom:20px;
     right: 50px;
-
 }
