@@ -1,9 +1,8 @@
 <?php
 
 include "core/connect.php";
-// include "core/admin.php";
 $title = 'Book Table';
-ob_start();
+    ob_start();
 ?>
 
 <link rel="stylesheet" href="assets/css/owner.css">
@@ -24,7 +23,9 @@ ob_start();
                 <th>Language</th>
                 <th>Date of publication</th>
                 <th>Available</th>
+                <?php if (isAdmin()) {?>
                 <th></th>
+                <?php }?>
             </tr>
         </thead>
 
@@ -39,18 +40,17 @@ ob_start();
                 while ($row = mysqli_fetch_assoc($result)) {
                     $id = $row['ID'];
                     $bookname = $row['BookName'];
-                    $desc = $row['Description'];
                     $dop = $row['dop'];
                     $lang = $row['Language'];
                     $available = $row['Available'];
                     echo ' 
+                    
 <tr> 
-<th scope="row">' . $id . '</th>
+<th scope="row"><a class="link-desc" href="description.php?ID=' . $id . '">' . $id . '</a></th>
 <td>' . $bookname . '</td>
 <td>' . $lang . '</td>
 <td>' . $dop . '</td>
 <td>' . $available . '</td>
-
 '
                         . (isAdmin() ? '<td> 
 <a class="update-btn" href="book-update.php? updateid=' . $id . '" class="text-light">Update</a>

@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
             // Username, question, and answer are correct, store user ID in the session
             $user_data = mysqli_fetch_assoc($query);
             $_SESSION['user_id'] = $user_data['ID'];
-            header("location: reset-pass.php");
+            header("location:reset-pass.php");
             exit();
         } else {
             $_SESSION['resetpass_error'];
@@ -36,7 +36,7 @@ ob_start();
         <form action="forget.php" method="post">
             <h2>Forgot Password</h2>
             <div class="form-group-forget">
-                 <label for="username">Username:</label>
+                <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group-forget">
