@@ -21,8 +21,7 @@ if (isset($_POST['submit'])) {
         if ($result) {
             echo "Password updated successfully";
             // Redirect to the login page after successful password update  
-
-            header('Location: login.php');
+            header('location:login.php');
             exit();
         } else {
             echo "Error updating password";
@@ -30,7 +29,7 @@ if (isset($_POST['submit'])) {
     } else {
         // Passwords do not match, redirect back to forget password page with an error message
         $_SESSION['resetpass_error'] = "The passwords do not match. Please try again.";
-        header('Location: forgetpassword.php');
+        // header('Location:forget.php');
         exit();
     }
 }
@@ -41,7 +40,7 @@ ob_start();
 
 <div class="reset-container">
     <div class="reset-box">
-        <form action="resetpass.php" method="post">
+        <form action="" method="post">
             <h1>Reset Password</h1>
             <div class="form-group-forget">
                 <label for="newPassword">New Password:</label>

@@ -138,8 +138,8 @@ ob_start();
             <input type="checkbox" id="availability" name="availability" value="1">
         </div>
         <div class="form-group">
-            pdf:
-            <input type="file" id="pdf" name="pdf">
+            <!-- pdf:
+            <input type="file" id="pdf" name="pdf"> -->
             img:
             <input type="file" id="image" name="image">
         </div>
